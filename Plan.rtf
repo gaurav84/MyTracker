@@ -1,0 +1,132 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187
+{\fonttbl\f0\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh13040\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs20 \cf0 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+************************************                
+\b IDEA / PLAN
+\b0                   *****************************************************\
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\b \ul \ulc0 \
+\
+Capture Screen:\ulnone \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b0 \cf0 There will be a 
+\b CAPTURE
+\b0  button to capture current location. \
+- Once captured successfully, user should give it a Label. \
+	- After giving a label, it should ask for people accompanying you. User should be able to enter the name of the person.\
+	- It should then ask if user wants to add any/all of the following-\
+		a) Photos\
+		b) Notes\
+- If the capture was not successful, user should be given an option to try again.\
+\
+Pressing Capture button should get the following data:\
+- 
+\b Latitude
+\b0 \
+- 
+\b Longitude
+\b0 \
+- 
+\b Date
+\b0 \
+- 
+\b Time
+\b0 \
+- 
+\b Day
+\b0  (Monday, Tuesday, etc.)\
+\
+	Core Data:
+\b \
+	
+\b0 - Table name: Location (lat. long, date, time, day)\
+\
+
+\b \ul Reports Screen:\ulnone \
+
+\b0 \
+Types of reports:\
+1) 
+\b All Check-ins report:
+\b0  A table view showing all entries (recent on the top)\
+2) 
+\b Frequently Visited Places report:
+\b0  Most frequently visited places (might be a bar chart)\
+	a) Default mode (1month) - \
+	b) Date range mode (can be changed with a slider) - \
+3) 
+\b Visited-with report:
+\b0  A report showing places visited based on people accompanied you. For example - You have visited Citywalk (Saket) 5 times with your mother in last 2 weeks OR You have not been out with your wife in last 2 weeks.\
+\
+
+\b \ul Map Screen:\ulnone \
+
+\b0 Default mode - Placemarks showing all the places visited since the app is installed\
+Date Range mode - Showing the placemarks on map for the places visited in that date range.\
+\
+
+\b \ul Places Screen:\ulnone \
+
+\b0 User should be able to search for a place by-\
+- 
+\b name
+\b0 \
+- 
+\b label
+\b0 \
+- 
+\b people who accompanied you
+\b0 \
+Results should appear in a tableview, with the name of the place as the main text.\
+\
+
+\b \ul Upload Photos screen:\ulnone \
+
+\b0 User should get an option to upload photos when CAPTURE button is pressed.\
+\
+
+\b \ul Add People Screen:\
+
+\b0 \ulnone User can add people frequently visiting with them (father, mother, wife, etc.) along with their association with that person.  On the capture screen, if user presses to add people, auto suggest should show already added people. \
+\
+* App coming in foreground from background, should show a fact.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b \cf0 *******************************************     DEVELOPMENT        **********************************************\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b0 \cf0 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b \cf0 \ul \ulc0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b0 \cf0 \ulnone * Error messages should be user friendly.\
+* Use AppLog (defined in .pch file) for all NSLog\
+\
+
+\b \ul General:
+\b0 \ulnone \
+
+\b \ul 	.h files:\
+
+\b0 \ulnone 		* Variables/Properties should be marked with comments if they are UI related (IBOutlet).\
+\
+
+\b \ul 	.m files:
+\b0 \ulnone \
+		* Header files should be marked with comments stating wether it is a API Header file or a custom header file.\
+\
+
+\b CoreLocationManager
+\b0  \
+- should always be instantiated using getInstance as it is a singleton class.\
+}
