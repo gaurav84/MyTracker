@@ -32,21 +32,27 @@
 
 -(IBAction)captureDetails:(id)sender {
     [self.coreLocationManager startLocationService];
-    
-    DateTimeDayVO *dateTimeDayVO = [DateTimeUtil getDateTimeDayVO];
-    
-    CaptureDetailsVO *captureDetailsVO = [CaptureDetailsVO getInstance];
-    captureDetailsVO.dateTimeDayVO = dateTimeDayVO;
-    
-    CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
-    [coreDataUtil saveCapturedDetails:captureDetailsVO];
 }
 
 #pragma mark CoreLocationManager delegate methods
 
 -(void)didReceiveLocation:(LocationVO *)locationVO {
+    // preparing the CaptureDetailsVO which will store the lat, lng, date, time, day, etc..
     CaptureDetailsVO *captureDetailsVO = [CaptureDetailsVO getInstance];
     captureDetailsVO.locationVO = locationVO;
+    
+    // getting the DateTimeDayVO
+    DateTimeDayVO *dateTimeDayVO = [DateTimeUtil getDateTimeDayVO];
+    captureDetailsVO.dateTimeDayVO = dateTimeDayVO;
+    
+    // saving date, time, day, lat, lng, etc. in core data
+    CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
+    BOOL isSaved = [coreDataUtil saveCapturedDetails:captureDetailsVO];
+    
+    if(isSaved)
+        self.status.text = @"Saved in DB";
+    else
+        self.status.text = @"Error saving, please try again";
 }
 
 -(void)didFailWithError:(NSError *)error {

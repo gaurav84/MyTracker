@@ -11,6 +11,6 @@
 
 @interface CoreDataUtil : NSObject
 
--(void)saveCapturedDetails:(CaptureDetailsVO *)captureDetailsVO;
+-(BOOL)saveCapturedDetails:(CaptureDetailsVO *)captureDetailsVO;
 
 @end

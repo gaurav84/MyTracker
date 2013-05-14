@@ -13,7 +13,7 @@
 
 @implementation CoreDataUtil
 
--(void)saveCapturedDetails:(CaptureDetailsVO *)captureDetailsVO {
+-(BOOL)saveCapturedDetails:(CaptureDetailsVO *)captureDetailsVO {
     NSError *error;
     CoreDataFactory *coreDataFactory = [[CoreDataFactory alloc] init];
     NSManagedObjectContext *context = [coreDataFactory managedObjectContext];
@@ -21,12 +21,28 @@
                               insertNewObjectForEntityForName:@"CapturedLocation"
                               inManagedObjectContext:context];
     
-    [model setValue:[NSNumber numberWithInt:[@"2012" intValue]] forKey:@"year"];
-    [model setValue:@"March" forKey:@"month"];
+    // CaptureDetailsVO contains DateTimeDayVO & LocationVO
+    DateTimeDayVO *dateTimeDayVO = captureDetailsVO.dateTimeDayVO;
+    LocationVO *locationVO = captureDetailsVO.locationVO;
     
+    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.date] forKey:@"date"];
+    [model setValue:dateTimeDayVO.weekday forKey:@"day"];
+    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.hour] forKey:@"hour"];
+    [model setValue:[NSNumber numberWithInt:locationVO.latitude] forKey:@"latitude"];
+    [model setValue:[NSNumber numberWithInt:locationVO.longitude] forKey:@"longitude"];
+    [model setValue:dateTimeDayVO.meridian forKey:@"meridian"];
+    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.min] forKey:@"min"];
+    [model setValue:dateTimeDayVO.month forKey:@"month"];
+    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.sec] forKey:@"sec"];
+    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.year] forKey:@"year"];
     
     if (![context save:&error]) {
-        AppLog(@"Couldn't save: %@", [error localizedDescription]);
+        AppLog(@"Error saving in core data: %@", [error localizedDescription]);
+        return false;
+    }
+    else {
+        AppLog(@"Saved in core data");
+        return true;
     }
 }
 
