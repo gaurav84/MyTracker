@@ -17,6 +17,7 @@ Capture Screen:\ulnone \
 \b0 \cf0 There will be a 
 \b CAPTURE
 \b0  button to capture current location. \
+- Check for internet connection if user touches CAPTURE button.\
 - Once captured successfully, user should give it a Label. \
 	- After giving a label, it should ask for people accompanying you. User should be able to enter the name of the person.\
 	- It should then ask if user wants to add any/all of the following-\
@@ -46,10 +47,12 @@ Pressing Capture button should get the following data:\
 	
 \b0 - Table name: Location (lat. long, date, time, day)\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b \ul Reports Screen:\ulnone \
+\b \cf0 \ul Reports Screen:\ulnone \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b0 \
+\b0 \cf0 \
 Types of reports:\
 1) 
 \b All Check-ins report:
@@ -63,16 +66,20 @@ Types of reports:\
 \b Visited-with report:
 \b0  A report showing places visited based on people accompanied you. For example - You have visited Citywalk (Saket) 5 times with your mother in last 2 weeks OR You have not been out with your wife in last 2 weeks.\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b \ul Map Screen:\ulnone \
+\b \cf0 \ul Map Screen:\ulnone \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b0 Default mode - Placemarks showing all the places visited since the app is installed\
+\b0 \cf0 Default mode - Placemarks showing all the places visited since the app is installed\
 Date Range mode - Showing the placemarks on map for the places visited in that date range.\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b \ul Places Screen:\ulnone \
+\b \cf0 \ul Places Screen:\ulnone \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b0 User should be able to search for a place by-\
+\b0 \cf0 User should be able to search for a place by-\
 - 
 \b name
 \b0 \
@@ -84,20 +91,23 @@ Date Range mode - Showing the placemarks on map for the places visited in that d
 \b0 \
 Results should appear in a tableview, with the name of the place as the main text.\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b \ul Upload Photos screen:\ulnone \
+\b \cf0 \ul Upload Photos screen:\ulnone \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b0 User should get an option to upload photos when CAPTURE button is pressed.\
+\b0 \cf0 User should get an option to upload photos when CAPTURE button is pressed.\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b \ul Add People Screen:\
+\b \cf0 \ul Add People Screen:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b0 \ulnone User can add people frequently visiting with them (father, mother, wife, etc.) along with their association with that person.  On the capture screen, if user presses to add people, auto suggest should show already added people. \
+\b0 \cf0 \ulnone User can add people frequently visiting with them (father, mother, wife, etc.) along with their association with that person.  On the capture screen, if user presses to add people, auto suggest should show already added people. \
 \
 * App coming in foreground from background, should show a fact.\
 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
-\cf0 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------\
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
 \b \cf0 *******************************************     DEVELOPMENT        **********************************************\
@@ -106,22 +116,25 @@ Results should appear in a tableview, with the name of the place as the main tex
 \b0 \cf0 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b \cf0 \ul \ulc0 \
+\b \cf0 \ul \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
 \b0 \cf0 \ulnone * Error messages should be user friendly.\
 * Use AppLog (defined in .pch file) for all NSLog\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b \ul General:
+\b \cf0 \ul General:
 \b0 \ulnone \
 
 \b \ul 	.h files:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b0 \ulnone 		* Variables/Properties should be marked with comments if they are UI related (IBOutlet).\
+\b0 \cf0 \ulnone 		* Variables/Properties should be marked with comments if they are UI related (IBOutlet).\
 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b \ul 	.m files:
+\b \cf0 \ul 	.m files:
 \b0 \ulnone \
 		* Header files should be marked with comments stating wether it is a API Header file or a custom header file.\
 \
