@@ -26,6 +26,7 @@
 		F83F8B1A172F807F00F8F465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8B19172F807F00F8F465 /* CoreLocation.framework */; };
 		F83F8B1E172F80BC00F8F465 /* CoreLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */; };
 		F83F8B23172FA02C00F8F465 /* LocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B22172FA02C00F8F465 /* LocationVO.m */; };
+		F8B0CC6C1743823400C92482 /* AlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0CC6B1743823400C92482 /* AlertUtil.m */; };
 		F8C911B4172FBC5300CE2C35 /* DateTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C911B3172FBC5300CE2C35 /* DateTimeUtil.m */; };
 		F8C911B8172FD15400CE2C35 /* DateTimeDayVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C911B7172FD15400CE2C35 /* DateTimeDayVO.m */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,8 @@
 		F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationManager.m; sourceTree = "<group>"; };
 		F83F8B21172FA02C00F8F465 /* LocationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationVO.h; sourceTree = "<group>"; };
 		F83F8B22172FA02C00F8F465 /* LocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationVO.m; sourceTree = "<group>"; };
+		F8B0CC6A1743823400C92482 /* AlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertUtil.h; sourceTree = "<group>"; };
+		F8B0CC6B1743823400C92482 /* AlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertUtil.m; sourceTree = "<group>"; };
 		F8C911B2172FBC5300CE2C35 /* DateTimeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeUtil.h; sourceTree = "<group>"; };
 		F8C911B3172FBC5300CE2C35 /* DateTimeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeUtil.m; sourceTree = "<group>"; };
 		F8C911B6172FD15400CE2C35 /* DateTimeDayVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeDayVO.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				F8C911B3172FBC5300CE2C35 /* DateTimeUtil.m */,
 				2F2691C817350933000DD8ED /* CoreDataUtil.h */,
 				2F2691C917350933000DD8ED /* CoreDataUtil.m */,
+				F8B0CC6A1743823400C92482 /* AlertUtil.h */,
+				F8B0CC6B1743823400C92482 /* AlertUtil.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				2FF4A0BA1734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld in Sources */,
 				2F2691C617350826000DD8ED /* CoreDataFactory.m in Sources */,
 				2F2691CA17350933000DD8ED /* CoreDataUtil.m in Sources */,
+				F8B0CC6C1743823400C92482 /* AlertUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +329,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gaurav Srivastava (7PXX9M6P77)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gaurav Srivastava (7PXX9M6P77)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -338,6 +345,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "812A3790-823A-4339-BF4A-34E8286DEBC1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "812A3790-823A-4339-BF4A-34E8286DEBC1";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -354,7 +363,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gaurav Srivastava (7PXX9M6P77)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gaurav Srivastava (7PXX9M6P77)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -362,6 +372,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "812A3790-823A-4339-BF4A-34E8286DEBC1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "812A3790-823A-4339-BF4A-34E8286DEBC1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -370,11 +382,15 @@
 		F83F8B17172F806700F8F465 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gaurav Srivastava (7PXX9M6P77)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gaurav Srivastava (7PXX9M6P77)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTracker/MyTracker-Prefix.pch";
 				INFOPLIST_FILE = "MyTracker/MyTracker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "812A3790-823A-4339-BF4A-34E8286DEBC1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "812A3790-823A-4339-BF4A-34E8286DEBC1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -382,11 +398,15 @@
 		F83F8B18172F806700F8F465 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gaurav Srivastava (7PXX9M6P77)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gaurav Srivastava (7PXX9M6P77)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTracker/MyTracker-Prefix.pch";
 				INFOPLIST_FILE = "MyTracker/MyTracker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "812A3790-823A-4339-BF4A-34E8286DEBC1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "812A3790-823A-4339-BF4A-34E8286DEBC1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -14,6 +14,6 @@
 @property (nonatomic, retain) CoreLocationManager *coreLocationManager;
 
 // IBOutlet
-@property (nonatomic, retain) IBOutlet UILabel *status;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

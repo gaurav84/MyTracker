@@ -12,6 +12,7 @@
 #import "DateTimeDayVO.h"
 #import "CaptureDetailsVO.h"
 #import "CoreDataUtil.h"
+#import "AlertUtil.h"
 
 @interface CaptureDetailsController ()
 
@@ -21,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setActivityIndicatorVisibility:NO];
     self.coreLocationManager = [CoreLocationManager getInstance];
     self.coreLocationManager.delegate = self;
 }
@@ -31,6 +33,7 @@
 }
 
 -(IBAction)captureDetails:(id)sender {
+    [self setActivityIndicatorVisibility:YES];
     [self.coreLocationManager startLocationService];
 }
 
@@ -50,11 +53,11 @@
     BOOL isSaved = [coreDataUtil saveCapturedDetails:captureDetailsVO];
     
     if(isSaved)
-        self.status.text = @"Saved in DB";
+        [AlertUtil showAlertWithMessage:@"Saved"];
     else
-        self.status.text = @"Error saving, please try again";
+        [AlertUtil showAlertWithMessage:@"Please try again"];
     
-    [coreDataUtil getCapturedDetails];
+    [self setActivityIndicatorVisibility:NO];
 }
 
 -(void)didFailWithError:(NSError *)error {
@@ -62,8 +65,13 @@
 }
 
 -(void)locationServiceAlert {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Please enable location service to continue" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-    [alertView show];
+    [AlertUtil showAlertWithMessage:@"Please enable location service to continue"];
+}
+
+#pragma mark Activity Indicator
+
+-(void)setActivityIndicatorVisibility:(BOOL)flag {
+    self.activityIndicator.hidden = !flag;
 }
 
 #pragma mark
