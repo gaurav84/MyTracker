@@ -53,10 +53,17 @@
         self.status.text = @"Saved in DB";
     else
         self.status.text = @"Error saving, please try again";
+    
+    [coreDataUtil getCapturedDetails];
 }
 
 -(void)didFailWithError:(NSError *)error {
     AppLog(@"%@", [error localizedDescription]);
+}
+
+-(void)locationServiceAlert {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@"Please enable location service to continue" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alertView show];
 }
 
 #pragma mark

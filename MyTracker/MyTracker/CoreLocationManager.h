@@ -17,6 +17,7 @@
 
 -(void)didReceiveLocation:(LocationVO *)locationVO;
 -(void)didFailWithError:(NSError *)error;
+-(void)locationServiceAlert;
 
 @end
 

@@ -26,11 +26,13 @@
         [self.locationManager startUpdatingLocation];
     }
     else {
-        AppLog(@"Location Services are not enabled");
+        [self.delegate locationServiceAlert];
     }
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    [self.locationManager stopUpdatingLocation];
+
     AppLog(@"%@", [NSString stringWithFormat:@"Latitude: %f, Longitude: %f", [[locations lastObject] coordinate].latitude, [[locations lastObject] coordinate].longitude]);
     
     LocationVO *locationVO = [[LocationVO alloc] init];
@@ -38,7 +40,6 @@
     locationVO.longitude = [[locations lastObject] coordinate].longitude;
     [self.delegate didReceiveLocation:locationVO];
     
-    [self.locationManager stopUpdatingLocation];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
