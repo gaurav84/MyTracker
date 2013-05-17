@@ -13,6 +13,8 @@
 #import "CaptureDetailsVO.h"
 #import "CoreDataUtil.h"
 #import "AlertUtil.h"
+#import "CapturedDetailsView.h"
+#import "InternetUtil.h"
 
 @interface CaptureDetailsController ()
 
@@ -22,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setActivityIndicatorVisibility:NO];
+
+    [self initialSettings];
     self.coreLocationManager = [CoreLocationManager getInstance];
     self.coreLocationManager.delegate = self;
 }
@@ -33,13 +36,20 @@
 }
 
 -(IBAction)captureDetails:(id)sender {
-    [self setActivityIndicatorVisibility:YES];
-    [self.coreLocationManager startLocationService];
+    if([InternetUtil isInternetAvailable]) {
+        [self setActivityIndicatorVisible:YES];
+        [self.coreLocationManager startLocationService];
+    }
+    else {
+        [AlertUtil showAlertWithMessage:@"Please connect to internet."];
+    }
 }
 
 #pragma mark CoreLocationManager delegate methods
 
 -(void)didReceiveLocation:(LocationVO *)locationVO {
+    self.capturedDetailsView.hidden = NO;
+
     // preparing the CaptureDetailsVO which will store the lat, lng, date, time, day, etc..
     CaptureDetailsVO *captureDetailsVO = [CaptureDetailsVO getInstance];
     captureDetailsVO.locationVO = locationVO;
@@ -47,6 +57,8 @@
     // getting the DateTimeDayVO
     DateTimeDayVO *dateTimeDayVO = [DateTimeUtil getDateTimeDayVO];
     captureDetailsVO.dateTimeDayVO = dateTimeDayVO;
+
+
     
     // saving date, time, day, lat, lng, etc. in core data
     CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
@@ -57,7 +69,7 @@
     else
         [AlertUtil showAlertWithMessage:@"Please try again"];
     
-    [self setActivityIndicatorVisibility:NO];
+    [self setActivityIndicatorVisible:NO];
 }
 
 -(void)didFailWithError:(NSError *)error {
@@ -65,14 +77,24 @@
 }
 
 -(void)locationServiceAlert {
+    [self setActivityIndicatorVisible:NO];
     [AlertUtil showAlertWithMessage:@"Please enable location service to continue"];
 }
 
 #pragma mark Activity Indicator
 
--(void)setActivityIndicatorVisibility:(BOOL)flag {
+-(void)setActivityIndicatorVisible:(BOOL)flag {
     self.activityIndicator.hidden = !flag;
 }
+
+#pragma mark General Settings
+
+-(void)initialSettings {
+    [self setActivityIndicatorVisible:NO];
+    self.capturedDetailsView.hidden = YES;
+}
+
+
 
 #pragma mark
 
