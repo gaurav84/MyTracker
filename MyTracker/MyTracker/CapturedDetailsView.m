@@ -10,8 +10,8 @@
 
 @implementation CapturedDetailsView
 
--(id)init {
-    if(self = [super init]) {
+-(id)initWithCoder:(NSCoder *)aDecoder {
+    if(self = [super initWithCoder:aDecoder]) {
         [self prepareGrid];
         return self;
     }
@@ -24,10 +24,10 @@
     int rows = 7;
     int rowHeight = 20;
 
-    for (int i=0; i<rows; i++) {
-        for (int j=0; j<columns; j++) {
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50 * i, 50 * j, 100, rowHeight)];
-            label.text = [NSString stringWithFormat:@"X %d-%d", i , j];
+    for (int i=0; i<columns; i++) {
+        for (int j=0; j<rows; j++) {
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50 * i, rowHeight * j, 75, rowHeight)];
+            label.text = [NSString stringWithFormat:@"%d%d", j , i];
             [self addSubview:label];
         }
     }

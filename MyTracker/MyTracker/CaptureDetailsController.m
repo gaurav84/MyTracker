@@ -57,17 +57,15 @@
     // getting the DateTimeDayVO
     DateTimeDayVO *dateTimeDayVO = [DateTimeUtil getDateTimeDayVO];
     captureDetailsVO.dateTimeDayVO = dateTimeDayVO;
-
-
     
     // saving date, time, day, lat, lng, etc. in core data
-    CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
-    BOOL isSaved = [coreDataUtil saveCapturedDetails:captureDetailsVO];
-    
-    if(isSaved)
-        [AlertUtil showAlertWithMessage:@"Saved"];
-    else
-        [AlertUtil showAlertWithMessage:@"Please try again"];
+//    CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
+//    BOOL isSaved = [coreDataUtil saveCapturedDetails:captureDetailsVO];
+//    
+//    if(isSaved)
+//        [AlertUtil showAlertWithMessage:@"Saved"];
+//    else
+//        [AlertUtil showAlertWithMessage:@"Please try again"];
     
     [self setActivityIndicatorVisible:NO];
 }

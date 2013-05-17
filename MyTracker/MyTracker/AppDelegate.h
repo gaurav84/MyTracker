@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class CaptureDetailsController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -15,5 +16,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) CaptureDetailsController *viewController;
+
 
 @end
