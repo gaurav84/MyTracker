@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CaptureDetailsVO.h"
+#import "CapturedDetailsVO.h"
 
 @interface CoreDataUtil : NSObject
 
--(BOOL)saveCapturedDetails:(CaptureDetailsVO *)captureDetailsVO;
-//-(CaptureDetailsVO *)getCapturedDetails;
+-(BOOL)saveCapturedDetails:(CapturedDetailsVO *)capturedDetailsVO;
+//-(CapturedDetailsVO *)getCapturedDetails;
 
 @end

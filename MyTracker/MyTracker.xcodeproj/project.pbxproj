@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		2F2691C617350826000DD8ED /* CoreDataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C517350826000DD8ED /* CoreDataFactory.m */; };
 		2F2691CA17350933000DD8ED /* CoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C917350933000DD8ED /* CoreDataUtil.m */; };
-		2F7DCDB11733F0C400C918FF /* CaptureDetailsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DCDB01733F0C400C918FF /* CaptureDetailsVO.m */; };
+		2F7DCDB11733F0C400C918FF /* CapturedDetailsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */; };
+		2FDC5F62174675D100A1C1B9 /* CapturedDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC5F61174675D100A1C1B9 /* CapturedDetailsView.xib */; };
 		2FF4A0BA1734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4A0B81734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld */; };
 		2FF4A0C11734FDE3001CCE74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF4A0C01734FDE3001CCE74 /* CoreData.framework */; };
 		F807CA881744DD6700125570 /* InternetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F807CA871744DD6700125570 /* InternetUtil.m */; };
@@ -40,8 +41,9 @@
 		2F2691C517350826000DD8ED /* CoreDataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFactory.m; sourceTree = "<group>"; };
 		2F2691C817350933000DD8ED /* CoreDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataUtil.h; sourceTree = "<group>"; };
 		2F2691C917350933000DD8ED /* CoreDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataUtil.m; sourceTree = "<group>"; };
-		2F7DCDAF1733F0C400C918FF /* CaptureDetailsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureDetailsVO.h; sourceTree = "<group>"; };
-		2F7DCDB01733F0C400C918FF /* CaptureDetailsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureDetailsVO.m; sourceTree = "<group>"; };
+		2F7DCDAF1733F0C400C918FF /* CapturedDetailsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedDetailsVO.h; sourceTree = "<group>"; };
+		2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedDetailsVO.m; sourceTree = "<group>"; };
+		2FDC5F61174675D100A1C1B9 /* CapturedDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CapturedDetailsView.xib; sourceTree = "<group>"; };
 		2FF4A0B91734F9AD001CCE74 /* MyTrackerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTrackerModel.xcdatamodel; sourceTree = "<group>"; };
 		2FF4A0C01734FDE3001CCE74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F807CA841744DD1700125570 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -229,8 +231,8 @@
 				F83F8B22172FA02C00F8F465 /* LocationVO.m */,
 				F8C911B6172FD15400CE2C35 /* DateTimeDayVO.h */,
 				F8C911B7172FD15400CE2C35 /* DateTimeDayVO.m */,
-				2F7DCDAF1733F0C400C918FF /* CaptureDetailsVO.h */,
-				2F7DCDB01733F0C400C918FF /* CaptureDetailsVO.m */,
+				2F7DCDAF1733F0C400C918FF /* CapturedDetailsVO.h */,
+				2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */,
 			);
 			name = VO;
 			sourceTree = "<group>";
@@ -258,6 +260,7 @@
 			children = (
 				F887F6C71744BE40002D188E /* CapturedDetailsView.h */,
 				F887F6C81744BE40002D188E /* CapturedDetailsView.m */,
+				2FDC5F61174675D100A1C1B9 /* CapturedDetailsView.xib */,
 			);
 			name = CapturedDetailsView;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				F83F8B0B172F806700F8F465 /* Default@2x.png in Resources */,
 				F83F8B0D172F806700F8F465 /* Default-568h@2x.png in Resources */,
 				F83F8B13172F806700F8F465 /* CaptureDetailsController.xib in Resources */,
+				2FDC5F62174675D100A1C1B9 /* CapturedDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +351,7 @@
 				F83F8B23172FA02C00F8F465 /* LocationVO.m in Sources */,
 				F8C911B4172FBC5300CE2C35 /* DateTimeUtil.m in Sources */,
 				F8C911B8172FD15400CE2C35 /* DateTimeDayVO.m in Sources */,
-				2F7DCDB11733F0C400C918FF /* CaptureDetailsVO.m in Sources */,
+				2F7DCDB11733F0C400C918FF /* CapturedDetailsVO.m in Sources */,
 				2FF4A0BA1734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld in Sources */,
 				2F2691C617350826000DD8ED /* CoreDataFactory.m in Sources */,
 				2F2691CA17350933000DD8ED /* CoreDataUtil.m in Sources */,

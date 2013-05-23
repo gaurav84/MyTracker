@@ -8,12 +8,12 @@
 
 #import "CoreDataUtil.h"
 #import <CoreData/CoreData.h>
-#import "CaptureDetailsVO.h"
+#import "CapturedDetailsVO.h"
 #import "CoreDataFactory.h"
 
 @implementation CoreDataUtil
 
--(BOOL)saveCapturedDetails:(CaptureDetailsVO *)captureDetailsVO {
+-(BOOL)saveCapturedDetails:(CapturedDetailsVO *)capturedDetailsVO {
     NSError *error;
     CoreDataFactory *coreDataFactory = [[CoreDataFactory alloc] init];
     NSManagedObjectContext *context = [coreDataFactory managedObjectContext];
@@ -21,9 +21,9 @@
                               insertNewObjectForEntityForName:@"CapturedLocation"
                               inManagedObjectContext:context];
     
-    // CaptureDetailsVO contains DateTimeDayVO & LocationVO
-    DateTimeDayVO *dateTimeDayVO = captureDetailsVO.dateTimeDayVO;
-    LocationVO *locationVO = captureDetailsVO.locationVO;
+    // CapturedDetailsVO contains DateTimeDayVO & LocationVO
+    DateTimeDayVO *dateTimeDayVO = capturedDetailsVO.dateTimeDayVO;
+    LocationVO *locationVO = capturedDetailsVO.locationVO;
     
     [model setValue:[NSNumber numberWithInt:dateTimeDayVO.date] forKey:@"date"];
     [model setValue:dateTimeDayVO.weekday forKey:@"day"];
@@ -46,7 +46,7 @@
     }
 }
 
-//-(CaptureDetailsVO *)getCapturedDetails {
+//-(CapturedDetailsVO *)getCapturedDetails {
 //    NSError *error;
 //    CoreDataFactory *coreDataFactory = [[CoreDataFactory alloc] init];
 //    NSManagedObjectContext *context = [coreDataFactory managedObjectContext];

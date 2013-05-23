@@ -1,5 +1,5 @@
 //
-//  CaptureDetailsVO.h
+//  CapturedDetailsVO.h
 //  MyTracker
 //
 //  Created by Gaurav Srivastava on 03/05/13.
@@ -10,11 +10,11 @@
 #import "LocationVO.h"
 #import "DateTimeDayVO.h"
 
-@interface CaptureDetailsVO : NSObject
+@interface CapturedDetailsVO : NSObject
 
 @property (nonatomic, retain) LocationVO *locationVO;
 @property (nonatomic, retain) DateTimeDayVO *dateTimeDayVO;
 
-+(CaptureDetailsVO *)getInstance;
++(CapturedDetailsVO *)getInstance;
 
 @end

@@ -10,7 +10,7 @@
 #import "CoreLocationManager.h"
 #import "DateTimeUtil.h"
 #import "DateTimeDayVO.h"
-#import "CaptureDetailsVO.h"
+#import "CapturedDetailsVO.h"
 #import "CoreDataUtil.h"
 #import "AlertUtil.h"
 #import "CapturedDetailsView.h"
@@ -50,17 +50,19 @@
 -(void)didReceiveLocation:(LocationVO *)locationVO {
     self.capturedDetailsView.hidden = NO;
 
-    // preparing the CaptureDetailsVO which will store the lat, lng, date, time, day, etc..
-    CaptureDetailsVO *captureDetailsVO = [CaptureDetailsVO getInstance];
-    captureDetailsVO.locationVO = locationVO;
+    // preparing the CapturedDetailsVO which will store the lat, lng, date, time, day, etc..
+    CapturedDetailsVO *capturedDetailsVO = [CapturedDetailsVO getInstance];
+    capturedDetailsVO.locationVO = locationVO;
     
     // getting the DateTimeDayVO
     DateTimeDayVO *dateTimeDayVO = [DateTimeUtil getDateTimeDayVO];
-    captureDetailsVO.dateTimeDayVO = dateTimeDayVO;
+    capturedDetailsVO.dateTimeDayVO = dateTimeDayVO;
+    
+    [self displayCapturedDetailsView:capturedDetailsVO];
     
     // saving date, time, day, lat, lng, etc. in core data
 //    CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
-//    BOOL isSaved = [coreDataUtil saveCapturedDetails:captureDetailsVO];
+//    BOOL isSaved = [coreDataUtil saveCapturedDetails:capturedDetailsVO];
 //    
 //    if(isSaved)
 //        [AlertUtil showAlertWithMessage:@"Saved"];
@@ -92,7 +94,31 @@
     self.capturedDetailsView.hidden = YES;
 }
 
+#pragma mark Captured Details View
 
+-(void)displayCapturedDetailsView:(CapturedDetailsVO *)capturedDetailsVO {
+    [self removeExistingView];
+    CapturedDetailsView *capturedDetailsView = [[CapturedDetailsView alloc] init];
+    [capturedDetailsView populateFieldsWithVO:capturedDetailsVO];
+    [self setFrameForView:capturedDetailsView];
+    [self.view addSubview:capturedDetailsView];
+}
+
+-(void)removeExistingView {
+    for(UIView *view in [self.view subviews]) {
+        if([view isKindOfClass:[CapturedDetailsView class]]) {
+            [view removeFromSuperview];
+        }
+    }
+}
+
+-(void)setFrameForView:(UIView *)view {
+    CGRect frame = view.frame;
+    frame.origin = CGPointMake(30, 120);
+    [view setFrame:frame];
+}
+
+#pragma mark 
 
 #pragma mark
 

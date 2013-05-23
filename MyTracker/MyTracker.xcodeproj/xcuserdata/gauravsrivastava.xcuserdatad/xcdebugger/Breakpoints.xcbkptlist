@@ -13,7 +13,20 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "34"
          endingLineNumber = "34"
-         landmarkName = "-captureDetails:"
+         landmarkName = "-didReceiveMemoryWarning"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MyTracker/CapturedDetailsView.m"
+         timestampString = "391019133.582232"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "30"
+         endingLineNumber = "30"
+         landmarkName = "-populateFieldsWithVO:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,12 +34,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyTracker/CaptureDetailsController.m"
-         timestampString = "389367541.57508"
+         timestampString = "391015504.085835"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "49"
-         endingLineNumber = "49"
-         landmarkName = "-didReceiveLocation:"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
+         landmarkName = "-displayCapturedDetailsView:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MyTracker/CapturedDetailsView.m"
+         timestampString = "391015506.476571"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "14"
+         endingLineNumber = "14"
+         landmarkName = "-init"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MyTracker/CapturedDetailsView.m"
+         timestampString = "391015508.042028"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
+         landmarkName = "-awakeFromNib"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -34,13 +73,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyTracker/CaptureDetailsController.m"
-         timestampString = "389367541.57508"
+         timestampString = "391015623.336122"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "55"
-         endingLineNumber = "55"
-         landmarkName = "@implementation CaptureDetailsController"
-         landmarkType = "3">
+         startingLineNumber = "102"
+         endingLineNumber = "102"
+         landmarkName = "-displayCapturedDetailsView:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
