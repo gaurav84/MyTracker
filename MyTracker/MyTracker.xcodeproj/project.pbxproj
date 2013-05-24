@@ -10,7 +10,6 @@
 		2F2691C617350826000DD8ED /* CoreDataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C517350826000DD8ED /* CoreDataFactory.m */; };
 		2F2691CA17350933000DD8ED /* CoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C917350933000DD8ED /* CoreDataUtil.m */; };
 		2F7DCDB11733F0C400C918FF /* CapturedDetailsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */; };
-		2FDC5F62174675D100A1C1B9 /* CapturedDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FDC5F61174675D100A1C1B9 /* CapturedDetailsView.xib */; };
 		2FF4A0BA1734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4A0B81734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld */; };
 		2FF4A0C11734FDE3001CCE74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF4A0C01734FDE3001CCE74 /* CoreData.framework */; };
 		F807CA881744DD6700125570 /* InternetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F807CA871744DD6700125570 /* InternetUtil.m */; };
@@ -30,7 +29,8 @@
 		F83F8B1A172F807F00F8F465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8B19172F807F00F8F465 /* CoreLocation.framework */; };
 		F83F8B1E172F80BC00F8F465 /* CoreLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */; };
 		F83F8B23172FA02C00F8F465 /* LocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B22172FA02C00F8F465 /* LocationVO.m */; };
-		F887F6C91744BE40002D188E /* CapturedDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F887F6C81744BE40002D188E /* CapturedDetailsView.m */; };
+		F8942F59174F484F002AB0A2 /* CapturedDetailsContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = F8942F57174F484F002AB0A2 /* CapturedDetailsContoller.m */; };
+		F8942F5A174F484F002AB0A2 /* CapturedDetailsContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8942F58174F484F002AB0A2 /* CapturedDetailsContoller.xib */; };
 		F8B0CC6C1743823400C92482 /* AlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0CC6B1743823400C92482 /* AlertUtil.m */; };
 		F8C911B4172FBC5300CE2C35 /* DateTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C911B3172FBC5300CE2C35 /* DateTimeUtil.m */; };
 		F8C911B8172FD15400CE2C35 /* DateTimeDayVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C911B7172FD15400CE2C35 /* DateTimeDayVO.m */; };
@@ -43,7 +43,6 @@
 		2F2691C917350933000DD8ED /* CoreDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataUtil.m; sourceTree = "<group>"; };
 		2F7DCDAF1733F0C400C918FF /* CapturedDetailsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedDetailsVO.h; sourceTree = "<group>"; };
 		2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedDetailsVO.m; sourceTree = "<group>"; };
-		2FDC5F61174675D100A1C1B9 /* CapturedDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CapturedDetailsView.xib; sourceTree = "<group>"; };
 		2FF4A0B91734F9AD001CCE74 /* MyTrackerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTrackerModel.xcdatamodel; sourceTree = "<group>"; };
 		2FF4A0C01734FDE3001CCE74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F807CA841744DD1700125570 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -72,8 +71,9 @@
 		F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationManager.m; sourceTree = "<group>"; };
 		F83F8B21172FA02C00F8F465 /* LocationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationVO.h; sourceTree = "<group>"; };
 		F83F8B22172FA02C00F8F465 /* LocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationVO.m; sourceTree = "<group>"; };
-		F887F6C71744BE40002D188E /* CapturedDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedDetailsView.h; sourceTree = "<group>"; };
-		F887F6C81744BE40002D188E /* CapturedDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedDetailsView.m; sourceTree = "<group>"; };
+		F8942F56174F484E002AB0A2 /* CapturedDetailsContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedDetailsContoller.h; sourceTree = "<group>"; };
+		F8942F57174F484F002AB0A2 /* CapturedDetailsContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedDetailsContoller.m; sourceTree = "<group>"; };
+		F8942F58174F484F002AB0A2 /* CapturedDetailsContoller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CapturedDetailsContoller.xib; sourceTree = "<group>"; };
 		F8B0CC6A1743823400C92482 /* AlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertUtil.h; sourceTree = "<group>"; };
 		F8B0CC6B1743823400C92482 /* AlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertUtil.m; sourceTree = "<group>"; };
 		F8C911B2172FBC5300CE2C35 /* DateTimeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeUtil.h; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		F83F8AFC172F806700F8F465 /* MyTracker */ = {
 			isa = PBXGroup;
 			children = (
-				F887F6C61744BDCD002D188E /* CapturedDetailsView */,
+				F887F6C61744BDCD002D188E /* CapturedDetails */,
 				2FF4A0BC1734FC9F001CCE74 /* CoreData */,
 				F8C911B0172FBC2100CE2C35 /* Utility */,
 				F83F8B24172FB83900F8F465 /* Capture */,
@@ -255,14 +255,14 @@
 			name = XIB;
 			sourceTree = "<group>";
 		};
-		F887F6C61744BDCD002D188E /* CapturedDetailsView */ = {
+		F887F6C61744BDCD002D188E /* CapturedDetails */ = {
 			isa = PBXGroup;
 			children = (
-				F887F6C71744BE40002D188E /* CapturedDetailsView.h */,
-				F887F6C81744BE40002D188E /* CapturedDetailsView.m */,
-				2FDC5F61174675D100A1C1B9 /* CapturedDetailsView.xib */,
+				F8942F56174F484E002AB0A2 /* CapturedDetailsContoller.h */,
+				F8942F57174F484F002AB0A2 /* CapturedDetailsContoller.m */,
+				F8942F58174F484F002AB0A2 /* CapturedDetailsContoller.xib */,
 			);
-			name = CapturedDetailsView;
+			name = CapturedDetails;
 			sourceTree = "<group>";
 		};
 		F8C911B0172FBC2100CE2C35 /* Utility */ = {
@@ -332,7 +332,7 @@
 				F83F8B0B172F806700F8F465 /* Default@2x.png in Resources */,
 				F83F8B0D172F806700F8F465 /* Default-568h@2x.png in Resources */,
 				F83F8B13172F806700F8F465 /* CaptureDetailsController.xib in Resources */,
-				2FDC5F62174675D100A1C1B9 /* CapturedDetailsView.xib in Resources */,
+				F8942F5A174F484F002AB0A2 /* CapturedDetailsContoller.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,8 +356,8 @@
 				2F2691C617350826000DD8ED /* CoreDataFactory.m in Sources */,
 				2F2691CA17350933000DD8ED /* CoreDataUtil.m in Sources */,
 				F8B0CC6C1743823400C92482 /* AlertUtil.m in Sources */,
-				F887F6C91744BE40002D188E /* CapturedDetailsView.m in Sources */,
 				F807CA881744DD6700125570 /* InternetUtil.m in Sources */,
+				F8942F59174F484F002AB0A2 /* CapturedDetailsContoller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreLocationManager.h"
-#import "CapturedDetailsView.h"
 
 @interface CaptureDetailsController : UIViewController <CoreLocationManagerDelegate>
 
@@ -16,6 +15,5 @@
 
 // IBOutlet
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, retain) IBOutlet CapturedDetailsView *capturedDetailsView;
 
 @end
