@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F2691C617350826000DD8ED /* CoreDataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C517350826000DD8ED /* CoreDataFactory.m */; };
 		2F2691CA17350933000DD8ED /* CoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C917350933000DD8ED /* CoreDataUtil.m */; };
+		2F6A26A8175274BE00199A9D /* MemberVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A26A7175274BE00199A9D /* MemberVO.m */; };
 		2F7DCDB11733F0C400C918FF /* CapturedDetailsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */; };
 		2FF4A0BA1734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4A0B81734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld */; };
 		2FF4A0C11734FDE3001CCE74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF4A0C01734FDE3001CCE74 /* CoreData.framework */; };
@@ -41,6 +42,8 @@
 		2F2691C517350826000DD8ED /* CoreDataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFactory.m; sourceTree = "<group>"; };
 		2F2691C817350933000DD8ED /* CoreDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataUtil.h; sourceTree = "<group>"; };
 		2F2691C917350933000DD8ED /* CoreDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataUtil.m; sourceTree = "<group>"; };
+		2F6A26A6175274BE00199A9D /* MemberVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberVO.h; sourceTree = "<group>"; };
+		2F6A26A7175274BE00199A9D /* MemberVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberVO.m; sourceTree = "<group>"; };
 		2F7DCDAF1733F0C400C918FF /* CapturedDetailsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedDetailsVO.h; sourceTree = "<group>"; };
 		2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedDetailsVO.m; sourceTree = "<group>"; };
 		2FF4A0B91734F9AD001CCE74 /* MyTrackerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTrackerModel.xcdatamodel; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 				F83F8B22172FA02C00F8F465 /* LocationVO.m */,
 				F8C911B6172FD15400CE2C35 /* DateTimeDayVO.h */,
 				F8C911B7172FD15400CE2C35 /* DateTimeDayVO.m */,
+				2F6A26A6175274BE00199A9D /* MemberVO.h */,
+				2F6A26A7175274BE00199A9D /* MemberVO.m */,
 				2F7DCDAF1733F0C400C918FF /* CapturedDetailsVO.h */,
 				2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */,
 			);
@@ -358,6 +363,7 @@
 				F8B0CC6C1743823400C92482 /* AlertUtil.m in Sources */,
 				F807CA881744DD6700125570 /* InternetUtil.m in Sources */,
 				F8942F59174F484F002AB0A2 /* CapturedDetailsContoller.m in Sources */,
+				2F6A26A8175274BE00199A9D /* MemberVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

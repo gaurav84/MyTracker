@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MyTracker/CaptureDetailsController.m"
-         timestampString = "389367541.57508"
+         timestampString = "391280279.086385"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
+         startingLineNumber = "33"
+         endingLineNumber = "33"
          landmarkName = "-didReceiveMemoryWarning"
          landmarkType = "5">
       </FileBreakpoint>
@@ -27,19 +27,6 @@
          startingLineNumber = "30"
          endingLineNumber = "30"
          landmarkName = "-populateFieldsWithVO:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "MyTracker/CaptureDetailsController.m"
-         timestampString = "391015504.085835"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
-         landmarkName = "-displayCapturedDetailsView:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -66,19 +53,6 @@
          startingLineNumber = "23"
          endingLineNumber = "23"
          landmarkName = "-awakeFromNib"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "MyTracker/CaptureDetailsController.m"
-         timestampString = "391015623.336122"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "102"
-         endingLineNumber = "102"
-         landmarkName = "-displayCapturedDetailsView:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CapturedDetailsVO.h"
 
-@interface CapturedDetailsContoller : UIViewController
+@interface CapturedDetailsContoller : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, retain) CapturedDetailsVO *capturedDetailsVO;
 
@@ -19,5 +19,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *timeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *dateLabel;
 @property (nonatomic, retain) IBOutlet UITextField *labelField;
+@property (nonatomic, retain) IBOutlet UITextField *memberNameField;
+@property (nonatomic, retain) IBOutlet UITextField *memberRelationField;
 
 @end

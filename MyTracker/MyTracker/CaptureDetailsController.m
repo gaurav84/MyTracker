@@ -11,7 +11,6 @@
 #import "DateTimeUtil.h"
 #import "DateTimeDayVO.h"
 #import "CapturedDetailsVO.h"
-#import "CoreDataUtil.h"
 #import "AlertUtil.h"
 #import "CapturedDetailsContoller.h"
 #import "InternetUtil.h"
@@ -94,17 +93,6 @@
         [AlertUtil showAlertWithMessage:@"Please connect to internet."];
     }
 }
-
-/*
- // saving date, time, day, lat, lng, etc. in core data
- CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
- BOOL isSaved = [coreDataUtil saveCapturedDetails:capturedDetailsVO];
- 
- if(isSaved)
- [AlertUtil showAlertWithMessage:@"Saved"];
- else
- [AlertUtil showAlertWithMessage:@"Please try again"];
- */
 
 #pragma mark
 

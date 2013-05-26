@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "LocationVO.h"
 #import "DateTimeDayVO.h"
+#import "MemberVO.h"
 
 @interface CapturedDetailsVO : NSObject
 
 @property (nonatomic, retain) LocationVO *locationVO;
 @property (nonatomic, retain) DateTimeDayVO *dateTimeDayVO;
+@property (nonatomic, retain) MemberVO *memberVO;
 
 +(CapturedDetailsVO *)getInstance;
 
