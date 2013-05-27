@@ -11,7 +11,11 @@
 
 @interface CoreDataUtil : NSObject
 
+// methods for saving data
 -(BOOL)saveCapturedDetails:(CapturedDetailsVO *)capturedDetailsVO;
--(CapturedDetailsVO *)getCapturedDetails;
+
+// methods for fetching data
+//-(CapturedDetailsVO *)getCapturedDetails;
+-(NSMutableArray *)listOfPlaceLabels;
 
 @end

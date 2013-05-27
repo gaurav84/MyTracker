@@ -12,6 +12,6 @@
 
 @property (nonatomic) float latitude;
 @property (nonatomic) float longitude;
-@property (nonatomic, retain) NSString *label;
+@property (nonatomic, retain) NSString *placeLabel;
 
 @end

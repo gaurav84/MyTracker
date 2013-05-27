@@ -26,14 +26,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.listOfAllPlaceLabels = [[NSMutableArray alloc] init];
+    self.listOfMatchedPlaceLabels = [[NSMutableArray alloc] init];
     
+    // setting top left and top right buttons
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(initCoreDataToSaveDetails:)];
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismissModalViewControllerAnimated:)];
     [self.navigationItem setLeftBarButtonItem:cancelButton];
     [self.navigationItem setRightBarButtonItem:saveButton];
+    
+    // setting title of screen
     [self setTitle:@"Details"];
     
     [self populateFieldsWithVO:self.capturedDetailsVO];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
+    [self.listOfAllPlaceLabels removeAllObjects];
+    self.listOfAllPlaceLabels = [coreDataUtil listOfPlaceLabels];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,20 +72,39 @@
 #pragma mark Text Field delegate
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self.labelField resignFirstResponder];
+    [self.placeLabelField resignFirstResponder];
     [self.memberNameField resignFirstResponder];
     [self.memberRelationField resignFirstResponder];
+    return true;
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSString *substring = [NSString stringWithString:textField.text];
+    substring = [substring stringByReplacingCharactersInRange:range withString:string];
+    [self populateAutoSuggestListWithString:substring];
+    
+    if([self.listOfMatchedPlaceLabels count] > 0) {
+        self.autoSuggestTableView.hidden = NO;
+    }
+    else
+        self.autoSuggestTableView.hidden = YES;
+    
+    [self.autoSuggestTableView reloadData];
+    
     return true;
 }
 
 #pragma mark Saving to core data
 
 -(void)initCoreDataToSaveDetails:(id)sender {
-
-    [self addLabel];
+    
+    [self addPlaceLabel];
     [self addMemberWithName:self.memberNameField.text withRelation:self.memberRelationField.text];
     
-    if(self.labelField.text != @"") {
+    if([self.placeLabelField.text isEqualToString:@""]) {
+        [AlertUtil showAlertWithMessage:@"Please enter a label for the place"];
+    }
+    else {
         
         CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
         BOOL isSaved = [coreDataUtil saveCapturedDetails:self.capturedDetailsVO];
@@ -84,17 +114,61 @@
         else
             [AlertUtil showAlertWithMessage:@"Please try again"];
     }
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark Misc
 
--(void)addLabel {
-    self.capturedDetailsVO.locationVO.label = self.labelField.text;
+// this method adds the 'placeLabel' text to CapturedDetailsVO,
+// since this vo encapsulates lat, lng, time, date, label, member, etc. & core data saves CapturedDetailsVO
+-(void)addPlaceLabel {
+    self.capturedDetailsVO.locationVO.placeLabel = self.placeLabelField.text;
 }
 
+// this method adds the 'member name' and 'member relation' text to CapturedDetailsVO,
+// since this vo encapsulates lat, lng, time, date, label, member, etc. & core data saves CapturedDetailsVO
 -(void)addMemberWithName:(NSString *)name withRelation:(NSString *)relation {
     self.capturedDetailsVO.memberVO.name = name;
     self.capturedDetailsVO.memberVO.relation = relation;
+}
+
+#pragma mark Auto suggest
+
+-(void)populateAutoSuggestListWithString:(NSString *)string {
+    [self.listOfMatchedPlaceLabels removeAllObjects];
+    for(NSString *arrayItem in self.listOfAllPlaceLabels) {
+        if ([arrayItem rangeOfString:string].location != NSNotFound) {
+            [self.listOfMatchedPlaceLabels addObject:arrayItem];
+        }
+    }
+}
+
+#pragma mark AutoSuggest TableView delegate
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.listOfMatchedPlaceLabels count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"CellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if(cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    cell.textLabel.text = [self.listOfMatchedPlaceLabels objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 #pragma mark

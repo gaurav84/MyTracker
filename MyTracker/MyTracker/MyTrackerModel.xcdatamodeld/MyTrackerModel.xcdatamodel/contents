@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="11E2617" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12A269" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CapturedLocation" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="day" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hour" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="memberName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberRelation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="meridian" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="min" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="placeLabel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sec" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CapturedLocation" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="CapturedLocation" positionX="-5472" positionY="-342" width="128" height="238"/>
     </elements>
 </model>

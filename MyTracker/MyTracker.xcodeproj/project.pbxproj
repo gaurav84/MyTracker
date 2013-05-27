@@ -30,6 +30,7 @@
 		F83F8B1A172F807F00F8F465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8B19172F807F00F8F465 /* CoreLocation.framework */; };
 		F83F8B1E172F80BC00F8F465 /* CoreLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */; };
 		F83F8B23172FA02C00F8F465 /* LocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B22172FA02C00F8F465 /* LocationVO.m */; };
+		F874B419175323CF00B305FE /* 22alhome_Img8.png in Resources */ = {isa = PBXBuildFile; fileRef = F874B418175323CF00B305FE /* 22alhome_Img8.png */; };
 		F8942F59174F484F002AB0A2 /* CapturedDetailsContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = F8942F57174F484F002AB0A2 /* CapturedDetailsContoller.m */; };
 		F8942F5A174F484F002AB0A2 /* CapturedDetailsContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8942F58174F484F002AB0A2 /* CapturedDetailsContoller.xib */; };
 		F8B0CC6C1743823400C92482 /* AlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0CC6B1743823400C92482 /* AlertUtil.m */; };
@@ -74,6 +75,7 @@
 		F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationManager.m; sourceTree = "<group>"; };
 		F83F8B21172FA02C00F8F465 /* LocationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationVO.h; sourceTree = "<group>"; };
 		F83F8B22172FA02C00F8F465 /* LocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationVO.m; sourceTree = "<group>"; };
+		F874B418175323CF00B305FE /* 22alhome_Img8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 22alhome_Img8.png; path = ../22alhome_Img8.png; sourceTree = "<group>"; };
 		F8942F56174F484E002AB0A2 /* CapturedDetailsContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedDetailsContoller.h; sourceTree = "<group>"; };
 		F8942F57174F484F002AB0A2 /* CapturedDetailsContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedDetailsContoller.m; sourceTree = "<group>"; };
 		F8942F58174F484F002AB0A2 /* CapturedDetailsContoller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CapturedDetailsContoller.xib; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		F83F8AFC172F806700F8F465 /* MyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F874B41A175323E200B305FE /* UI Assets */,
 				F887F6C61744BDCD002D188E /* CapturedDetails */,
 				2FF4A0BC1734FC9F001CCE74 /* CoreData */,
 				F8C911B0172FBC2100CE2C35 /* Utility */,
@@ -258,6 +261,22 @@
 				F83F8B11172F806700F8F465 /* CaptureDetailsController.xib */,
 			);
 			name = XIB;
+			sourceTree = "<group>";
+		};
+		F874B41A175323E200B305FE /* UI Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F874B41B175323ED00B305FE /* App Icon */,
+			);
+			name = "UI Assets";
+			sourceTree = "<group>";
+		};
+		F874B41B175323ED00B305FE /* App Icon */ = {
+			isa = PBXGroup;
+			children = (
+				F874B418175323CF00B305FE /* 22alhome_Img8.png */,
+			);
+			name = "App Icon";
 			sourceTree = "<group>";
 		};
 		F887F6C61744BDCD002D188E /* CapturedDetails */ = {
@@ -338,6 +357,7 @@
 				F83F8B0D172F806700F8F465 /* Default-568h@2x.png in Resources */,
 				F83F8B13172F806700F8F465 /* CaptureDetailsController.xib in Resources */,
 				F8942F5A174F484F002AB0A2 /* CapturedDetailsContoller.xib in Resources */,
+				F874B419175323CF00B305FE /* 22alhome_Img8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
