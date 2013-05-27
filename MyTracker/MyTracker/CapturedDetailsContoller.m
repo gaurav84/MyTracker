@@ -9,6 +9,7 @@
 #import "CapturedDetailsContoller.h"
 #import "CoreDataUtil.h"
 #import "AlertUtil.h"
+#import "DateTimeUtil.h"
 
 @interface CapturedDetailsContoller ()
 
@@ -101,11 +102,7 @@
     [self addPlaceLabel];
     [self addMemberWithName:self.memberNameField.text withRelation:self.memberRelationField.text];
     
-    if([self.placeLabelField.text isEqualToString:@""]) {
-        [AlertUtil showAlertWithMessage:@"Please enter a label for the place"];
-    }
-    else {
-        
+    if([self isValid]) {
         CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
         BOOL isSaved = [coreDataUtil saveCapturedDetails:self.capturedDetailsVO];
         
@@ -113,24 +110,9 @@
             [AlertUtil showAlertWithMessage:@"Saved"];
         else
             [AlertUtil showAlertWithMessage:@"Please try again"];
+        
+        [self dismissModalViewControllerAnimated:YES];
     }
-    
-    [self dismissModalViewControllerAnimated:YES];
-}
-
-#pragma mark Misc
-
-// this method adds the 'placeLabel' text to CapturedDetailsVO,
-// since this vo encapsulates lat, lng, time, date, label, member, etc. & core data saves CapturedDetailsVO
--(void)addPlaceLabel {
-    self.capturedDetailsVO.locationVO.placeLabel = self.placeLabelField.text;
-}
-
-// this method adds the 'member name' and 'member relation' text to CapturedDetailsVO,
-// since this vo encapsulates lat, lng, time, date, label, member, etc. & core data saves CapturedDetailsVO
--(void)addMemberWithName:(NSString *)name withRelation:(NSString *)relation {
-    self.capturedDetailsVO.memberVO.name = name;
-    self.capturedDetailsVO.memberVO.relation = relation;
 }
 
 #pragma mark Auto suggest
@@ -139,7 +121,8 @@
     [self.listOfMatchedPlaceLabels removeAllObjects];
     for(NSString *arrayItem in self.listOfAllPlaceLabels) {
         if ([arrayItem rangeOfString:string].location != NSNotFound) {
-            [self.listOfMatchedPlaceLabels addObject:arrayItem];
+            if(![self.listOfMatchedPlaceLabels containsObject:arrayItem])
+                [self.listOfMatchedPlaceLabels addObject:arrayItem];
         }
     }
 }
@@ -168,9 +151,34 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    self.placeLabelField.text = [self.listOfMatchedPlaceLabels objectAtIndex:indexPath.row];
+    self.autoSuggestTableView.hidden = YES;
 }
 
-#pragma mark
+#pragma mark Misc
+
+// this method adds the 'placeLabel' text to CapturedDetailsVO,
+// since this vo encapsulates lat, lng, time, date, label, member, etc. & core data saves CapturedDetailsVO
+-(void)addPlaceLabel {
+    self.capturedDetailsVO.locationVO.placeLabel = self.placeLabelField.text;
+}
+
+// this method adds the 'member name' and 'member relation' text to CapturedDetailsVO,
+// since this vo encapsulates lat, lng, time, date, label, member, etc. & core data saves CapturedDetailsVO
+-(void)addMemberWithName:(NSString *)name withRelation:(NSString *)relation {
+    self.capturedDetailsVO.memberVO.name = name;
+    self.capturedDetailsVO.memberVO.relation = relation;
+}
+
+-(BOOL)isValid {
+    BOOL flag = true;
+    
+    if([self.placeLabelField.text isEqualToString:@""]) {
+        [AlertUtil showAlertWithMessage:@"Please enter a label for the place"];
+        flag = false;
+    }
+    
+    return flag;
+}
 
 @end

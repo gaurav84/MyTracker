@@ -117,13 +117,11 @@ Results should appear in a tableview, with the name of the place as the main tex
 \b \cf0 *******************************************     DEVELOPMENT        **********************************************\
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\b0 \cf0 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------\
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\b0 \cf0 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+\b \ul \
+\
 
-\b \cf0 \ul \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
-
-\b0 \cf0 \ulnone * Error messages should be user friendly.\
+\b0 \ulnone * Error messages should be user friendly.\
 * Use AppLog (defined in .pch file) for all NSLog\
 \
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
@@ -146,4 +144,9 @@ Results should appear in a tableview, with the name of the place as the main tex
 \b CoreLocationManager
 \b0  \
 - should always be instantiated using getInstance as it is a singleton class.\
-}
+\
+
+\b To be Fixed: \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\b0 \cf0 - In CaptureDetailsScreen, check the time before capturing data. It might be possible that user opened this screen some time back, and the present time might have changed.}
