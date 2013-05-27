@@ -15,7 +15,7 @@
 -(BOOL)saveCapturedDetails:(CapturedDetailsVO *)capturedDetailsVO;
 
 // methods for fetching data
-//-(CapturedDetailsVO *)getCapturedDetails;
+-(CapturedDetailsVO *)getCapturedDetails;
 -(NSMutableArray *)listOfPlaceLabels;
 
 @end

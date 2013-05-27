@@ -50,25 +50,25 @@
     }
 }
 
-//-(CapturedDetailsVO *)getCapturedDetails {
-//    NSError *error;
-//    CoreDataFactory *coreDataFactory = [[CoreDataFactory alloc] init];
-//    NSManagedObjectContext *context = [coreDataFactory managedObjectContext];
-//    
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *entity = [NSEntityDescription
-//                                   entityForName:@"CapturedLocation" inManagedObjectContext:context];
-//    
-//    [fetchRequest setEntity:entity];
-//    
-//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-//    
-//    for (NSManagedObject *model in fetchedObjects) {
-//        AppLog(@"Value: %@", [model valueForKey:@"latitude"]);
-//    }
-//    
-//    return nil;
-//}
+-(CapturedDetailsVO *)getCapturedDetails {
+    NSError *error;
+    CoreDataFactory *coreDataFactory = [[CoreDataFactory alloc] init];
+    NSManagedObjectContext *context = [coreDataFactory managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"CapturedLocation" inManagedObjectContext:context];
+    
+    [fetchRequest setEntity:entity];
+    
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+    for (NSManagedObject *model in fetchedObjects) {
+        AppLog(@"Value: %@", [model valueForKey:@"latitude"]);
+    }
+    
+    return nil;
+}
 
 -(NSMutableArray *)listOfPlaceLabels {
     NSMutableArray *result = [[NSMutableArray alloc] init];
