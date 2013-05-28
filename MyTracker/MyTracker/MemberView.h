@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MemberViewDelegate <NSObject>
+
+-(void)addMemberTouched;
+
+@end
+
 @interface MemberView : UIScrollView
+
+@property (nonatomic, retain) id<MemberViewDelegate> memberViewDelegate;
 
 @end

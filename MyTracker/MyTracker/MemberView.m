@@ -11,7 +11,7 @@
 @implementation MemberView
 
 -(void)awakeFromNib {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(4, 4, 50, 50)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(4, 4, 75, 50)];
     imageView.image = [UIImage imageNamed:@"plus.png"];
     [self addSubview:imageView];
     
@@ -21,7 +21,7 @@
 }
 
 -(void)handleTouch:(UITapGestureRecognizer *)gesture {
-
+    [self.memberViewDelegate addMemberTouched];
 }
 
 #pragma mark

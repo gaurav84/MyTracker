@@ -82,7 +82,7 @@
     [self presentModalViewController:navigationController animated:YES];
 }
 
-#pragma mark IBOutlet
+#pragma mark IBAction
 
 -(IBAction)captureDetails:(id)sender {
     if([InternetUtil isInternetAvailable]) {

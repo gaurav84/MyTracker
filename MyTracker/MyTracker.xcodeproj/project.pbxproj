@@ -38,6 +38,9 @@
 		F8B0CC6C1743823400C92482 /* AlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0CC6B1743823400C92482 /* AlertUtil.m */; };
 		F8C911B4172FBC5300CE2C35 /* DateTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C911B3172FBC5300CE2C35 /* DateTimeUtil.m */; };
 		F8C911B8172FD15400CE2C35 /* DateTimeDayVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C911B7172FD15400CE2C35 /* DateTimeDayVO.m */; };
+		F8E0EF2A175496EA0018289E /* AddMemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E0EF29175496EA0018289E /* AddMemberView.m */; };
+		F8E0EF2C1754A83F0018289E /* AddMemberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E0EF2B1754A83F0018289E /* AddMemberView.xib */; };
+		F8E0EF2E1754B4730018289E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E0EF2D1754B4730018289E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,10 @@
 		F8C911B3172FBC5300CE2C35 /* DateTimeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeUtil.m; sourceTree = "<group>"; };
 		F8C911B6172FD15400CE2C35 /* DateTimeDayVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeDayVO.h; sourceTree = "<group>"; };
 		F8C911B7172FD15400CE2C35 /* DateTimeDayVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeDayVO.m; sourceTree = "<group>"; };
+		F8E0EF28175496EA0018289E /* AddMemberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMemberView.h; sourceTree = "<group>"; };
+		F8E0EF29175496EA0018289E /* AddMemberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMemberView.m; sourceTree = "<group>"; };
+		F8E0EF2B1754A83F0018289E /* AddMemberView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMemberView.xib; sourceTree = "<group>"; };
+		F8E0EF2D1754B4730018289E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8E0EF2E1754B4730018289E /* QuartzCore.framework in Frameworks */,
 				F807CA8B1744EB8000125570 /* SystemConfiguration.framework in Frameworks */,
 				2FF4A0C11734FDE3001CCE74 /* CoreData.framework in Frameworks */,
 				F83F8B1A172F807F00F8F465 /* CoreLocation.framework in Frameworks */,
@@ -159,6 +167,7 @@
 		F83F8AEA172F806700F8F465 = {
 			isa = PBXGroup;
 			children = (
+				F8E0EF2D1754B4730018289E /* QuartzCore.framework */,
 				F807CA8A1744EB8000125570 /* SystemConfiguration.framework */,
 				2FF4A0C01734FDE3001CCE74 /* CoreData.framework */,
 				F83F8B19172F807F00F8F465 /* CoreLocation.framework */,
@@ -289,6 +298,7 @@
 		F874B41E1753753300B305FE /* MemberView */ = {
 			isa = PBXGroup;
 			children = (
+				F8E0EF27175496CD0018289E /* Add Member */,
 				2F6609C41753A56B00A5994E /* MemberView.h */,
 				2F6609C51753A56B00A5994E /* MemberView.m */,
 			);
@@ -314,6 +324,16 @@
 				F807CA801744DBB400125570 /* AlertUtil */,
 			);
 			name = Utility;
+			sourceTree = "<group>";
+		};
+		F8E0EF27175496CD0018289E /* Add Member */ = {
+			isa = PBXGroup;
+			children = (
+				F8E0EF28175496EA0018289E /* AddMemberView.h */,
+				F8E0EF29175496EA0018289E /* AddMemberView.m */,
+				F8E0EF2B1754A83F0018289E /* AddMemberView.xib */,
+			);
+			name = "Add Member";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +395,7 @@
 				F8942F5A174F484F002AB0A2 /* CapturedDetailsContoller.xib in Resources */,
 				F874B419175323CF00B305FE /* 22alhome_Img8.png in Resources */,
 				F874B41D1753731800B305FE /* plus.png in Resources */,
+				F8E0EF2C1754A83F0018289E /* AddMemberView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +423,7 @@
 				F8942F59174F484F002AB0A2 /* CapturedDetailsContoller.m in Sources */,
 				2F6A26A8175274BE00199A9D /* MemberVO.m in Sources */,
 				2F6609C61753A56B00A5994E /* MemberView.m in Sources */,
+				F8E0EF2A175496EA0018289E /* AddMemberView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

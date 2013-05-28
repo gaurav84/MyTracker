@@ -10,6 +10,8 @@
 #import "CoreDataUtil.h"
 #import "AlertUtil.h"
 #import "DateTimeUtil.h"
+#import "AddMemberView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CapturedDetailsContoller ()
 
@@ -29,6 +31,8 @@
     [super viewDidLoad];
     self.listOfAllPlaceLabels = [[NSMutableArray alloc] init];
     self.listOfMatchedPlaceLabels = [[NSMutableArray alloc] init];
+    
+    self.memberView.memberViewDelegate = self;
     
     // setting top left and top right buttons
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(initCoreDataToSaveDetails:)];
@@ -74,8 +78,6 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.placeLabelField resignFirstResponder];
-    [self.memberNameField resignFirstResponder];
-    [self.memberRelationField resignFirstResponder];
     return true;
 }
 
@@ -100,7 +102,7 @@
 -(void)initCoreDataToSaveDetails:(id)sender {
     
     [self addPlaceLabel];
-    [self addMemberWithName:self.memberNameField.text withRelation:self.memberRelationField.text];
+    //[self addMemberWithName:self.memberNameField.text withRelation:self.memberRelationField.text];
     
     if([self isValid]) {
         CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
@@ -179,6 +181,28 @@
     }
     
     return flag;
+}
+
+#pragma mark MemberView delegate
+
+-(void)addMemberTouched {
+    int width = 200;
+    int height = 120;
+    int x = (self.view.frame.size.width - width)/2;
+    int y = self.view.frame.size.height/2 - height;
+   
+    AddMemberView *addMemberView = [[AddMemberView alloc] initWithFrame:CGRectMake(-width, y, width, height)];
+    [self.view addSubview:addMemberView];
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.2];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft
+                           forView:addMemberView
+                             cache:YES];
+    
+    addMemberView.frame = CGRectMake(x, y, width, height);
+    
+    [UIView commitAnimations];
 }
 
 @end
