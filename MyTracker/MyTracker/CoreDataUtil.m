@@ -24,7 +24,6 @@
     // CapturedDetailsVO contains DateTimeDayVO & LocationVO
     DateTimeDayVO *dateTimeDayVO = capturedDetailsVO.dateTimeDayVO;
     LocationVO *locationVO = capturedDetailsVO.locationVO;
-    MemberVO *memberVO = capturedDetailsVO.memberVO;
     
     [model setValue:[NSNumber numberWithInt:dateTimeDayVO.date] forKey:@"date"];
     [model setValue:dateTimeDayVO.weekday forKey:@"day"];
@@ -37,8 +36,6 @@
     [model setValue:[NSNumber numberWithInt:dateTimeDayVO.sec] forKey:@"sec"];
     [model setValue:[NSNumber numberWithInt:dateTimeDayVO.year] forKey:@"year"];
     [model setValue:locationVO.placeLabel forKey:@"placeLabel"];
-    [model setValue:memberVO.name forKey:@"memberName"];
-    [model setValue:memberVO.relation forKey:@"memberRelation"];
     
     if (![context save:&error]) {
         AppLog(@"Error saving in core data: %@", [error localizedDescription]);

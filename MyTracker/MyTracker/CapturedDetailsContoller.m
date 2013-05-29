@@ -33,6 +33,7 @@
     self.listOfMatchedPlaceLabels = [[NSMutableArray alloc] init];
     
     self.memberView.memberViewDelegate = self;
+    self.capturedDetailsVO.listOfMembers = [[NSMutableArray alloc] init];
     
     // setting top left and top right buttons
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(initCoreDataToSaveDetails:)];
@@ -77,7 +78,7 @@
 #pragma mark Text Field delegate
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self.placeLabelField resignFirstResponder];
+    [textField resignFirstResponder];
     return true;
 }
 
@@ -165,13 +166,6 @@
     self.capturedDetailsVO.locationVO.placeLabel = self.placeLabelField.text;
 }
 
-// this method adds the 'member name' and 'member relation' text to CapturedDetailsVO,
-// since this vo encapsulates lat, lng, time, date, label, member, etc. & core data saves CapturedDetailsVO
--(void)addMemberWithName:(NSString *)name withRelation:(NSString *)relation {
-    self.capturedDetailsVO.memberVO.name = name;
-    self.capturedDetailsVO.memberVO.relation = relation;
-}
-
 -(BOOL)isValid {
     BOOL flag = true;
     
@@ -192,6 +186,7 @@
     int y = self.view.frame.size.height/2 - height;
    
     AddMemberView *addMemberView = [[AddMemberView alloc] initWithFrame:CGRectMake(-width, y, width, height)];
+    addMemberView.capturedDetailsVO = self.capturedDetailsVO;
     [self.view addSubview:addMemberView];
     
     [UIView beginAnimations:nil context:nil];

@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) LocationVO *locationVO;
 @property (nonatomic, retain) DateTimeDayVO *dateTimeDayVO;
-@property (nonatomic, retain) MemberVO *memberVO;
+@property (nonatomic, retain) NSMutableArray *listOfMembers;
 
 +(CapturedDetailsVO *)getInstance;
 

@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CapturedDetailsVO.h"
 
-@interface AddMemberView : UIView
+@interface AddMemberView : UIView <UITextFieldDelegate>
 
--(IBAction)cancelTouched:(id)sender;
+@property (nonatomic, retain) CapturedDetailsVO *capturedDetailsVO;
+
+// IBOutlet
+@property (nonatomic, retain) IBOutlet UITextField *nameField;
+@property (nonatomic, retain) IBOutlet UITextField *relationField;
 
 @end

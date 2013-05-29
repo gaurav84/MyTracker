@@ -14,9 +14,32 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        NSLog(@"INIT");
+        UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"AddMemberView" owner:self options:nil] objectAtIndex:0];
+        [self addSubview:view];
     }
     return self;
+}
+
+#pragma mark IBAction
+
+-(IBAction)cancelTouched:(id)sender {
+    [self removeFromSuperview];
+    //AppLog(@"Retain count is %ld", CFGetRetainCount((__bridge CFTypeRef)self));
+}
+
+-(IBAction)addTouched:(id)sender {
+    MemberVO *memberVO = [[MemberVO alloc] init];
+    memberVO.name = self.nameField.text;
+    memberVO.relation = self.relationField.text;
+    
+    [self.capturedDetailsVO.listOfMembers addObject:memberVO];
+}
+
+#pragma mark UITextField delegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return true;
 }
 
 @end

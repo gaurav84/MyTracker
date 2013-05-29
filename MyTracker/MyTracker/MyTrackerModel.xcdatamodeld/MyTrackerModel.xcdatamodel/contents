@@ -6,16 +6,21 @@
         <attribute name="hour" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="memberName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="memberRelation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="meridian" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="min" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="placeLabel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sec" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Member" inverseName="members" inverseEntity="Member" syncable="YES"/>
+    </entity>
+    <entity name="Member" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CapturedLocation" inverseName="members" inverseEntity="CapturedLocation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CapturedLocation" positionX="-5472" positionY="-342" width="128" height="238"/>
+        <element name="CapturedLocation" positionX="-5472" positionY="-342" width="128" height="223"/>
+        <element name="Member" positionX="-5256" positionY="-264" width="128" height="88"/>
     </elements>
 </model>
