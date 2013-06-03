@@ -16,7 +16,6 @@
 
 @interface MemberView : UIScrollView {
     UIImageView *addMemberImageView;
-    int memberIndex;
 }
 
 @property (nonatomic, retain) id<MemberViewDelegate> memberViewDelegate;

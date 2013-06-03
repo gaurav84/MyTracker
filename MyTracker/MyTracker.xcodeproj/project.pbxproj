@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1547CB175CD3FA0050EA1A /* 22alhome_Img8.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F1547CA175CD3FA0050EA1A /* 22alhome_Img8.png */; };
 		2F2691C617350826000DD8ED /* CoreDataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C517350826000DD8ED /* CoreDataFactory.m */; };
 		2F2691CA17350933000DD8ED /* CoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C917350933000DD8ED /* CoreDataUtil.m */; };
 		2F6609C61753A56B00A5994E /* MemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6609C51753A56B00A5994E /* MemberView.m */; };
@@ -33,7 +34,6 @@
 		F83F8B1A172F807F00F8F465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8B19172F807F00F8F465 /* CoreLocation.framework */; };
 		F83F8B1E172F80BC00F8F465 /* CoreLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */; };
 		F83F8B23172FA02C00F8F465 /* LocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B22172FA02C00F8F465 /* LocationVO.m */; };
-		F874B419175323CF00B305FE /* 22alhome_Img8.png in Resources */ = {isa = PBXBuildFile; fileRef = F874B418175323CF00B305FE /* 22alhome_Img8.png */; };
 		F874B41D1753731800B305FE /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = F874B41C1753731800B305FE /* plus.png */; };
 		F8942F59174F484F002AB0A2 /* CapturedDetailsContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = F8942F57174F484F002AB0A2 /* CapturedDetailsContoller.m */; };
 		F8942F5A174F484F002AB0A2 /* CapturedDetailsContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8942F58174F484F002AB0A2 /* CapturedDetailsContoller.xib */; };
@@ -46,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F1547CA175CD3FA0050EA1A /* 22alhome_Img8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22alhome_Img8.png; sourceTree = "<group>"; };
 		2F2691C417350826000DD8ED /* CoreDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataFactory.h; sourceTree = "<group>"; };
 		2F2691C517350826000DD8ED /* CoreDataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFactory.m; sourceTree = "<group>"; };
 		2F2691C817350933000DD8ED /* CoreDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataUtil.h; sourceTree = "<group>"; };
@@ -88,7 +89,6 @@
 		F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationManager.m; sourceTree = "<group>"; };
 		F83F8B21172FA02C00F8F465 /* LocationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationVO.h; sourceTree = "<group>"; };
 		F83F8B22172FA02C00F8F465 /* LocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationVO.m; sourceTree = "<group>"; };
-		F874B418175323CF00B305FE /* 22alhome_Img8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 22alhome_Img8.png; path = ../22alhome_Img8.png; sourceTree = "<group>"; };
 		F874B41C1753731800B305FE /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		F8942F56174F484E002AB0A2 /* CapturedDetailsContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedDetailsContoller.h; sourceTree = "<group>"; };
 		F8942F57174F484F002AB0A2 /* CapturedDetailsContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedDetailsContoller.m; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 		F874B41B175323ED00B305FE /* App Icon */ = {
 			isa = PBXGroup;
 			children = (
-				F874B418175323CF00B305FE /* 22alhome_Img8.png */,
+				2F1547CA175CD3FA0050EA1A /* 22alhome_Img8.png */,
 			);
 			name = "App Icon";
 			sourceTree = "<group>";
@@ -411,9 +411,9 @@
 				F83F8B0D172F806700F8F465 /* Default-568h@2x.png in Resources */,
 				F83F8B13172F806700F8F465 /* CaptureDetailsController.xib in Resources */,
 				F8942F5A174F484F002AB0A2 /* CapturedDetailsContoller.xib in Resources */,
-				F874B419175323CF00B305FE /* 22alhome_Img8.png in Resources */,
 				F874B41D1753731800B305FE /* plus.png in Resources */,
 				F8E0EF2C1754A83F0018289E /* AddMemberView.xib in Resources */,
+				2F1547CB175CD3FA0050EA1A /* 22alhome_Img8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
