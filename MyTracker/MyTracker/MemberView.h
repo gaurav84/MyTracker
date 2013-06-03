@@ -14,8 +14,13 @@
 
 @end
 
-@interface MemberView : UIScrollView
+@interface MemberView : UIScrollView {
+    UIImageView *addMemberImageView;
+    int memberIndex;
+}
 
 @property (nonatomic, retain) id<MemberViewDelegate> memberViewDelegate;
+
+-(void)displayAddedMemberWithName:(NSString *)name andRelation:(NSString *)relation;
 
 @end

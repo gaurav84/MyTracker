@@ -123,7 +123,7 @@
 -(void)populateAutoSuggestListWithString:(NSString *)string {
     [self.listOfMatchedPlaceLabels removeAllObjects];
     for(NSString *arrayItem in self.listOfAllPlaceLabels) {
-        if ([arrayItem rangeOfString:string].location != NSNotFound) {
+        if ([arrayItem rangeOfString:string options:NSCaseInsensitiveSearch].location != NSNotFound) {
             if(![self.listOfMatchedPlaceLabels containsObject:arrayItem])
                 [self.listOfMatchedPlaceLabels addObject:arrayItem];
         }
@@ -186,6 +186,7 @@
     int y = self.view.frame.size.height/2 - height;
    
     AddMemberView *addMemberView = [[AddMemberView alloc] initWithFrame:CGRectMake(-width, y, width, height)];
+    addMemberView.delegate = self;
     addMemberView.capturedDetailsVO = self.capturedDetailsVO;
     [self.view addSubview:addMemberView];
     
@@ -198,6 +199,12 @@
     addMemberView.frame = CGRectMake(x, y, width, height);
     
     [UIView commitAnimations];
+}
+
+#pragma mark AddMemberView delegate 
+
+-(void)updateMemberViewWithName:(NSString *)name andRelation:(NSString *)relation {
+    [self.memberView displayAddedMemberWithName:name andRelation:relation];
 }
 
 @end

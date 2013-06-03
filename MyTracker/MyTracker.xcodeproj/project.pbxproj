@@ -17,6 +17,8 @@
 		F807CA881744DD6700125570 /* InternetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F807CA871744DD6700125570 /* InternetUtil.m */; };
 		F807CA891744EB2200125570 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F807CA851744DD1700125570 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F807CA8B1744EB8000125570 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F807CA8A1744EB8000125570 /* SystemConfiguration.framework */; };
+		F83D34CC175C58E1006314F5 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D34CB175C58E1006314F5 /* Member.m */; };
+		F83D34CF175C58E1006314F5 /* CapturedLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D34CE175C58E1006314F5 /* CapturedLocation.m */; };
 		F83F8AF7172F806700F8F465 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8AF6172F806700F8F465 /* UIKit.framework */; };
 		F83F8AF9172F806700F8F465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8AF8172F806700F8F465 /* Foundation.framework */; };
 		F83F8AFB172F806700F8F465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8AFA172F806700F8F465 /* CoreGraphics.framework */; };
@@ -61,6 +63,10 @@
 		F807CA861744DD6700125570 /* InternetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetUtil.h; sourceTree = "<group>"; };
 		F807CA871744DD6700125570 /* InternetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetUtil.m; sourceTree = "<group>"; };
 		F807CA8A1744EB8000125570 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F83D34CA175C58E1006314F5 /* Member.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
+		F83D34CB175C58E1006314F5 /* Member.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
+		F83D34CD175C58E1006314F5 /* CapturedLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedLocation.h; sourceTree = "<group>"; };
+		F83D34CE175C58E1006314F5 /* CapturedLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedLocation.m; sourceTree = "<group>"; };
 		F83F8AF3172F806700F8F465 /* MyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83F8AF6172F806700F8F465 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F83F8AF8172F806700F8F465 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -164,6 +170,17 @@
 			name = "Internet Availability";
 			sourceTree = "<group>";
 		};
+		F83D34C3175C586A006314F5 /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				F83D34CD175C58E1006314F5 /* CapturedLocation.h */,
+				F83D34CE175C58E1006314F5 /* CapturedLocation.m */,
+				F83D34CA175C58E1006314F5 /* Member.h */,
+				F83D34CB175C58E1006314F5 /* Member.m */,
+			);
+			name = "Managed Objects";
+			sourceTree = "<group>";
+		};
 		F83F8AEA172F806700F8F465 = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +256,7 @@
 		F83F8B1F172FA01300F8F465 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F83D34C3175C586A006314F5 /* Managed Objects */,
 				F83F8B20172FA01A00F8F465 /* VO */,
 				2FF4A0B81734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld */,
 			);
@@ -424,6 +442,8 @@
 				2F6A26A8175274BE00199A9D /* MemberVO.m in Sources */,
 				2F6609C61753A56B00A5994E /* MemberView.m in Sources */,
 				F8E0EF2A175496EA0018289E /* AddMemberView.m in Sources */,
+				F83D34CC175C58E1006314F5 /* Member.m in Sources */,
+				F83D34CF175C58E1006314F5 /* CapturedLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "CapturedDetailsVO.h"
 
+@protocol AddMemberViewDelegate <NSObject>
+
+-(void)updateMemberViewWithName:(NSString *)name andRelation:(NSString *)relation;
+
+@end
+
 @interface AddMemberView : UIView <UITextFieldDelegate>
 
 @property (nonatomic, retain) CapturedDetailsVO *capturedDetailsVO;
+@property (nonatomic) id<AddMemberViewDelegate> delegate;
 
 // IBOutlet
 @property (nonatomic, retain) IBOutlet UITextField *nameField;

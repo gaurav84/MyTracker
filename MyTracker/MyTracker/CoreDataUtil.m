@@ -10,32 +10,47 @@
 #import <CoreData/CoreData.h>
 #import "CapturedDetailsVO.h"
 #import "CoreDataFactory.h"
+#import "CapturedLocation.h"
+#import "Member.h"
 
 @implementation CoreDataUtil
 
 -(BOOL)saveCapturedDetails:(CapturedDetailsVO *)capturedDetailsVO {
     NSError *error;
-    CoreDataFactory *coreDataFactory = [[CoreDataFactory alloc] init];
-    NSManagedObjectContext *context = [coreDataFactory managedObjectContext];
-    NSManagedObject *model = [NSEntityDescription
-                              insertNewObjectForEntityForName:@"CapturedLocation"
-                              inManagedObjectContext:context];
     
-    // CapturedDetailsVO contains DateTimeDayVO & LocationVO
+    // Preparing VOs from CapturedDetailsVO
     DateTimeDayVO *dateTimeDayVO = capturedDetailsVO.dateTimeDayVO;
     LocationVO *locationVO = capturedDetailsVO.locationVO;
     
-    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.date] forKey:@"date"];
-    [model setValue:dateTimeDayVO.weekday forKey:@"day"];
-    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.hour] forKey:@"hour"];
-    [model setValue:[NSNumber numberWithFloat:locationVO.latitude] forKey:@"latitude"];
-    [model setValue:[NSNumber numberWithFloat:locationVO.longitude] forKey:@"longitude"];
-    [model setValue:dateTimeDayVO.meridian forKey:@"meridian"];
-    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.min] forKey:@"min"];
-    [model setValue:dateTimeDayVO.month forKey:@"month"];
-    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.sec] forKey:@"sec"];
-    [model setValue:[NSNumber numberWithInt:dateTimeDayVO.year] forKey:@"year"];
-    [model setValue:locationVO.placeLabel forKey:@"placeLabel"];
+    CoreDataFactory *coreDataFactory = [[CoreDataFactory alloc] init];
+    NSManagedObjectContext *context = [coreDataFactory managedObjectContext];
+    CapturedLocation *capturedLocation = [NSEntityDescription insertNewObjectForEntityForName:@"CapturedLocation"
+                                                                       inManagedObjectContext:context];
+    
+    
+    capturedLocation.latitude = [NSNumber numberWithFloat:locationVO.latitude];
+    capturedLocation.longitude = [NSNumber numberWithFloat:locationVO.longitude];
+    capturedLocation.placeLabel = locationVO.placeLabel;
+    capturedLocation.date = [NSNumber numberWithInt:dateTimeDayVO.date];
+    capturedLocation.month = dateTimeDayVO.month;
+    capturedLocation.year = [NSNumber numberWithInt:dateTimeDayVO.year];
+    capturedLocation.hour = [NSNumber numberWithInt:dateTimeDayVO.hour];
+    capturedLocation.min = [NSNumber numberWithInt:dateTimeDayVO.min];
+    capturedLocation.sec = [NSNumber numberWithInt:dateTimeDayVO.sec];
+    capturedLocation.meridian = dateTimeDayVO.meridian;
+    capturedLocation.day = dateTimeDayVO.weekday;
+    
+
+    
+    for(MemberVO *memberVO in capturedDetailsVO.listOfMembers) {
+        Member *member = [NSEntityDescription insertNewObjectForEntityForName:@"Member"
+                                                       inManagedObjectContext:context];
+        
+        member.name = memberVO.name;
+        member.relation = memberVO.relation;
+        
+        [capturedLocation addMemberObject:member];
+    }
     
     if (![context save:&error]) {
         AppLog(@"Error saving in core data: %@", [error localizedDescription]);
@@ -60,8 +75,12 @@
     
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
-    for (NSManagedObject *model in fetchedObjects) {
-        AppLog(@"Value: %@", [model valueForKey:@"latitude"]);
+    for (NSManagedObject *model in fetchedObjects) {        
+        NSSet *set = [(CapturedLocation *)model member];
+        AppLog(@"%d", [set count]);
+        for(Member *member in set) {
+            AppLog(@"Member: %@", member);
+        }
     }
     
     return nil;

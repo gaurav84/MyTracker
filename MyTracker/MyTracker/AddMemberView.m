@@ -33,6 +33,11 @@
     memberVO.relation = self.relationField.text;
     
     [self.capturedDetailsVO.listOfMembers addObject:memberVO];
+    
+    if(![self.nameField.text isEqualToString:@""] && ![self.relationField.text isEqualToString:@""]) {
+        [self removeFromSuperview];
+        [[self delegate] updateMemberViewWithName:self.nameField.text andRelation:self.relationField.text];
+    }
 }
 
 #pragma mark UITextField delegate

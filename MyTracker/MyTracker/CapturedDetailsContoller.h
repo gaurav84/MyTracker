@@ -14,7 +14,8 @@
 @interface CapturedDetailsContoller : UIViewController <UITextFieldDelegate,
                                                         UITableViewDelegate,
                                                         UITableViewDataSource,
-                                                        MemberViewDelegate>
+                                                        MemberViewDelegate,
+                                                        AddMemberViewDelegate>
 
 @property (nonatomic, retain) CapturedDetailsVO *capturedDetailsVO;
 @property (nonatomic, retain) NSMutableArray *listOfAllPlaceLabels;
