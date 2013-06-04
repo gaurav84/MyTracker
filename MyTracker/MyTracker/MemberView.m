@@ -22,6 +22,8 @@ int memberIndex = 0;
 #pragma mark View lifecycle
 
 -(void)awakeFromNib {
+
+    memberIndex = 0;
     
     // addMemberImageView is an image view, touching which allows user to add members to the captured location
     addMemberImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kLeftPadding, kTopPadding, kAddMemberImageViewWidth, kAddMemberImageViewHeight)];
