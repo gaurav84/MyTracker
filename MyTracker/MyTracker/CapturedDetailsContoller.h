@@ -10,10 +10,10 @@
 #import "CapturedDetailsVO.h"
 #import "MemberView.h"
 #import "AddMemberView.h"
+#import "AutoSuggest.h"
 
 @interface CapturedDetailsContoller : UIViewController <UITextFieldDelegate,
-                                                        UITableViewDelegate,
-                                                        UITableViewDataSource,
+                                                        AutoSuggestDelegate,
                                                         MemberViewDelegate,
                                                         AddMemberViewDelegate>
 
@@ -28,6 +28,6 @@
 @property (nonatomic, retain) IBOutlet UILabel *dateLabel;
 @property (nonatomic, retain) IBOutlet UITextField *placeLabelField;
 @property (nonatomic, retain) IBOutlet MemberView *memberView;
-@property (nonatomic, retain) IBOutlet UITableView *autoSuggestTableView;
+@property (nonatomic, retain) IBOutlet AutoSuggest *autoSuggestTableView;
 
 @end

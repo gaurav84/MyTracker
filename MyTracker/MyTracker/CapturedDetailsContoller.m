@@ -31,9 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.listOfAllPlaceLabels = [[NSMutableArray alloc] init];
     self.listOfMatchedPlaceLabels = [[NSMutableArray alloc] init];
     
+    self.autoSuggestTableView.autoSuggestDelegate = self;
     self.memberView.memberViewDelegate = self;
     self.capturedDetailsVO.listOfMembers = [[NSMutableArray alloc] init];
     
@@ -91,11 +93,13 @@
     
     if([self.listOfMatchedPlaceLabels count] > 0) {
         self.autoSuggestTableView.hidden = NO;
+        self.autoSuggestTableView.data = self.listOfMatchedPlaceLabels;
+        [self.autoSuggestTableView reloadData];
     }
-    else
+    else {
         self.autoSuggestTableView.hidden = YES;
+    }
     
-    [self.autoSuggestTableView reloadData];
     
     return true;
 }
@@ -136,34 +140,6 @@
     }
 }
 
-#pragma mark AutoSuggest TableView delegate
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.listOfMatchedPlaceLabels count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"CellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if(cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    
-    cell.textLabel.text = [self.listOfMatchedPlaceLabels objectAtIndex:indexPath.row];
-    
-    return cell;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.placeLabelField.text = [self.listOfMatchedPlaceLabels objectAtIndex:indexPath.row];
-    self.autoSuggestTableView.hidden = YES;
-}
-
 #pragma mark Misc
 
 // this method adds the 'placeLabel' text to CapturedDetailsVO,
@@ -171,6 +147,8 @@
 -(void)addPlaceLabel {
     self.capturedDetailsVO.locationVO.placeLabel = self.placeLabelField.text;
 }
+
+#pragma mark Validations
 
 -(BOOL)isValid {
     BOOL flag = true;
@@ -211,6 +189,13 @@
 
 -(void)updateMemberViewWithName:(NSString *)name andRelation:(NSString *)relation {
     [self.memberView displayAddedMemberWithName:name andRelation:relation];
+}
+
+#pragma mark AutoSuggest delegate
+
+-(void)labelTouched:(NSString *)label {
+    self.placeLabelField.text = label;
+    self.autoSuggestTableView.hidden = YES;
 }
 
 @end

@@ -449,22 +449,6 @@
 					</object>
 					<int key="connectionID">377</int>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">dataSource</string>
-						<reference key="source" ref="340396393"/>
-						<reference key="destination" ref="372490531"/>
-					</object>
-					<int key="connectionID">323</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="340396393"/>
-						<reference key="destination" ref="372490531"/>
-					</object>
-					<int key="connectionID">324</int>
-				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -478,7 +462,7 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<object class="IBNSLayoutConstraint" id="955786091">
+							<object class="IBNSLayoutConstraint" id="447165841">
 								<reference key="firstItem" ref="191373211"/>
 								<int key="firstAttribute">4</int>
 								<int key="relation">0</int>
@@ -1481,7 +1465,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">880</int>
-						<reference key="object" ref="955786091"/>
+						<reference key="object" ref="447165841"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -1528,7 +1512,7 @@
 					<reference ref="347127908"/>
 					<reference ref="677448916"/>
 					<reference ref="1056857129"/>
-					<reference ref="955786091"/>
+					<reference ref="447165841"/>
 				</array>
 				<string key="124.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="126.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -1597,6 +1581,7 @@
 				<string key="263.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="264.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="265.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="306.CustomClassName">AutoSuggest</string>
 				<string key="306.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array class="NSMutableArray" key="306.IBViewMetadataConstraints">
 					<reference ref="692359322"/>
@@ -1629,10 +1614,18 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
+					<string key="className">AutoSuggest</string>
+					<string key="superclassName">UITableView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AutoSuggest.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">CapturedDetailsContoller</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="autoSuggestTableView">UITableView</string>
+						<string key="autoSuggestTableView">AutoSuggest</string>
 						<string key="dateLabel">UILabel</string>
 						<string key="latitudeLabel">UILabel</string>
 						<string key="longitudeLabel">UILabel</string>
@@ -1643,7 +1636,7 @@
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="autoSuggestTableView">
 							<string key="name">autoSuggestTableView</string>
-							<string key="candidateClassName">UITableView</string>
+							<string key="candidateClassName">AutoSuggest</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="dateLabel">
 							<string key="name">dateLabel</string>

@@ -18,6 +18,7 @@
 		F807CA891744EB2200125570 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F807CA851744DD1700125570 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F807CA8B1744EB8000125570 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F807CA8A1744EB8000125570 /* SystemConfiguration.framework */; };
 		F83A43FD175DDF9F00086988 /* 22alhome_Img8.png in Resources */ = {isa = PBXBuildFile; fileRef = F83A43FC175DDF9F00086988 /* 22alhome_Img8.png */; };
+		F83A4401175DE24200086988 /* AutoSuggest.m in Sources */ = {isa = PBXBuildFile; fileRef = F83A4400175DE24200086988 /* AutoSuggest.m */; };
 		F83D34CC175C58E1006314F5 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D34CB175C58E1006314F5 /* Member.m */; };
 		F83D34CF175C58E1006314F5 /* CapturedLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D34CE175C58E1006314F5 /* CapturedLocation.m */; };
 		F83F8AF7172F806700F8F465 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8AF6172F806700F8F465 /* UIKit.framework */; };
@@ -64,6 +65,8 @@
 		F807CA871744DD6700125570 /* InternetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternetUtil.m; sourceTree = "<group>"; };
 		F807CA8A1744EB8000125570 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F83A43FC175DDF9F00086988 /* 22alhome_Img8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22alhome_Img8.png; sourceTree = "<group>"; };
+		F83A43FF175DE24200086988 /* AutoSuggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoSuggest.h; sourceTree = "<group>"; };
+		F83A4400175DE24200086988 /* AutoSuggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoSuggest.m; sourceTree = "<group>"; };
 		F83D34CA175C58E1006314F5 /* Member.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
 		F83D34CB175C58E1006314F5 /* Member.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
 		F83D34CD175C58E1006314F5 /* CapturedLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedLocation.h; sourceTree = "<group>"; };
@@ -170,6 +173,15 @@
 			name = "Internet Availability";
 			sourceTree = "<group>";
 		};
+		F83A43FE175DE21600086988 /* AutoSuggest */ = {
+			isa = PBXGroup;
+			children = (
+				F83A43FF175DE24200086988 /* AutoSuggest.h */,
+				F83A4400175DE24200086988 /* AutoSuggest.m */,
+			);
+			name = AutoSuggest;
+			sourceTree = "<group>";
+		};
 		F83D34C3175C586A006314F5 /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +227,7 @@
 		F83F8AFC172F806700F8F465 /* MyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F83A43FE175DE21600086988 /* AutoSuggest */,
 				F874B41E1753753300B305FE /* MemberView */,
 				F874B41A175323E200B305FE /* UI Assets */,
 				F887F6C61744BDCD002D188E /* CapturedDetails */,
@@ -444,6 +457,7 @@
 				F8E0EF2A175496EA0018289E /* AddMemberView.m in Sources */,
 				F83D34CC175C58E1006314F5 /* Member.m in Sources */,
 				F83D34CF175C58E1006314F5 /* CapturedLocation.m in Sources */,
+				F83A4401175DE24200086988 /* AutoSuggest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
