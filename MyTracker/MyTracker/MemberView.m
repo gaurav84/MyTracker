@@ -38,7 +38,6 @@ int memberIndex = 0;
 #pragma mark Single Tap Gesture
 
 -(void)handleTouch:(UITapGestureRecognizer *)gesture {
-    NSLog(@"Single tap");
     [self.memberViewDelegate addMemberTouched];
 }
 
