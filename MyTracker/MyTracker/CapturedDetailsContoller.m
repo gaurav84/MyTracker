@@ -6,12 +6,16 @@
 //  Copyright (c) 2013 Gaurav Srivastava. All rights reserved.
 //
 
+// API
+#import <QuartzCore/QuartzCore.h>
+
+// Custom
 #import "CapturedDetailsContoller.h"
 #import "CoreDataUtil.h"
 #import "AlertUtil.h"
 #import "DateTimeUtil.h"
 #import "AddMemberView.h"
-#import <QuartzCore/QuartzCore.h>
+#import "ActionSheetUtil.h"
 
 @interface CapturedDetailsContoller ()
 
@@ -196,6 +200,29 @@
 -(void)labelTouched:(NSString *)label {
     self.placeLabelField.text = label;
     self.autoSuggestTableView.hidden = YES;
+}
+
+#pragma mark IBAction
+
+-(IBAction)addPhotos:(id)sender {
+    ActionSheetUtil *actionSheetUtil = [[ActionSheetUtil alloc] init];
+    actionSheetUtil.actionSheetDelegate = self;
+    [actionSheetUtil actionSheetForAddingPhotosInView:self.view];
+}
+
+#pragma mark ActionSheetUtil delegate
+
+-(void)showCamera {
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentModalViewController:imagePicker animated:YES];
+    }
+}
+
+-(void)showGallery {
+    
 }
 
 @end
