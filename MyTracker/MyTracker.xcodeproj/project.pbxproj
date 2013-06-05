@@ -14,6 +14,8 @@
 		2F7DCDB11733F0C400C918FF /* CapturedDetailsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */; };
 		2FF4A0BA1734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4A0B81734F9AD001CCE74 /* MyTrackerModel.xcdatamodeld */; };
 		2FF4A0C11734FDE3001CCE74 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF4A0C01734FDE3001CCE74 /* CoreData.framework */; };
+		F800BCA8175EFB8700608B03 /* ManagePhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F800BCA6175EFB8700608B03 /* ManagePhotosViewController.m */; };
+		F800BCA9175EFB8700608B03 /* ManagePhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F800BCA7175EFB8700608B03 /* ManagePhotosViewController.xib */; };
 		F807CA881744DD6700125570 /* InternetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F807CA871744DD6700125570 /* InternetUtil.m */; };
 		F807CA891744EB2200125570 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F807CA851744DD1700125570 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F807CA8B1744EB8000125570 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F807CA8A1744EB8000125570 /* SystemConfiguration.framework */; };
@@ -59,6 +61,9 @@
 		2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedDetailsVO.m; sourceTree = "<group>"; };
 		2FF4A0B91734F9AD001CCE74 /* MyTrackerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTrackerModel.xcdatamodel; sourceTree = "<group>"; };
 		2FF4A0C01734FDE3001CCE74 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F800BCA5175EFB8700608B03 /* ManagePhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagePhotosViewController.h; sourceTree = "<group>"; };
+		F800BCA6175EFB8700608B03 /* ManagePhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagePhotosViewController.m; sourceTree = "<group>"; };
+		F800BCA7175EFB8700608B03 /* ManagePhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagePhotosViewController.xib; sourceTree = "<group>"; };
 		F807CA841744DD1700125570 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		F807CA851744DD1700125570 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		F807CA861744DD6700125570 /* InternetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternetUtil.h; sourceTree = "<group>"; };
@@ -133,6 +138,16 @@
 				2F2691C517350826000DD8ED /* CoreDataFactory.m */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		F800BCA4175EFB5D00608B03 /* ManagePhotos */ = {
+			isa = PBXGroup;
+			children = (
+				F800BCA5175EFB8700608B03 /* ManagePhotosViewController.h */,
+				F800BCA6175EFB8700608B03 /* ManagePhotosViewController.m */,
+				F800BCA7175EFB8700608B03 /* ManagePhotosViewController.xib */,
+			);
+			name = ManagePhotos;
 			sourceTree = "<group>";
 		};
 		F807CA7E1744DBA400125570 /* DateTime */ = {
@@ -227,6 +242,7 @@
 		F83F8AFC172F806700F8F465 /* MyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F800BCA4175EFB5D00608B03 /* ManagePhotos */,
 				F83A43FE175DE21600086988 /* AutoSuggest */,
 				F874B41E1753753300B305FE /* MemberView */,
 				F874B41A175323E200B305FE /* UI Assets */,
@@ -427,6 +443,7 @@
 				F874B41D1753731800B305FE /* plus.png in Resources */,
 				F8E0EF2C1754A83F0018289E /* AddMemberView.xib in Resources */,
 				F83A43FD175DDF9F00086988 /* 22alhome_Img8.png in Resources */,
+				F800BCA9175EFB8700608B03 /* ManagePhotosViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +475,7 @@
 				F83D34CC175C58E1006314F5 /* Member.m in Sources */,
 				F83D34CF175C58E1006314F5 /* CapturedLocation.m in Sources */,
 				F83A4401175DE24200086988 /* AutoSuggest.m in Sources */,
+				F800BCA8175EFB8700608B03 /* ManagePhotosViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

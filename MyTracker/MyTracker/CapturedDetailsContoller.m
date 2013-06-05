@@ -79,35 +79,6 @@
     return [NSString stringWithFormat:@"%d:%d %@", dateTimeDayVO.hour, dateTimeDayVO.min, dateTimeDayVO.meridian];
 }
 
-#pragma mark Text Field delegate
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return true;
-}
-
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    NSString *substring = [NSString stringWithString:textField.text];
-    substring = [substring stringByReplacingCharactersInRange:range withString:string];
-    [self populateAutoSuggestListWithString:substring];
-    
-    if([self.listOfMatchedPlaceLabels count] > 0) {
-        self.autoSuggestTableView.hidden = NO;
-        self.autoSuggestTableView.data = self.listOfMatchedPlaceLabels;
-        [self.autoSuggestTableView reloadData];
-    }
-    else {
-        self.autoSuggestTableView.hidden = YES;
-    }
-    
-    
-    return true;
-}
-
--(void)textFieldDidEndEditing:(UITextField *)textField {
-    self.autoSuggestTableView.hidden = YES;
-}
-
 #pragma mark Saving to core data
 
 -(void)initCoreDataToSaveDetails:(id)sender {
@@ -161,6 +132,7 @@
     return flag;
 }
 
+#pragma mark ------------------ Delegates (Begin) ------------------
 #pragma mark MemberView delegate
 
 -(void)addMemberTouched {
@@ -196,6 +168,43 @@
 -(void)labelTouched:(NSString *)label {
     self.placeLabelField.text = label;
     self.autoSuggestTableView.hidden = YES;
+}
+
+
+#pragma mark Text Field delegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return true;
+}
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSString *substring = [NSString stringWithString:textField.text];
+    substring = [substring stringByReplacingCharactersInRange:range withString:string];
+    [self populateAutoSuggestListWithString:substring];
+    
+    if([self.listOfMatchedPlaceLabels count] > 0) {
+        self.autoSuggestTableView.hidden = NO;
+        self.autoSuggestTableView.data = self.listOfMatchedPlaceLabels;
+        [self.autoSuggestTableView reloadData];
+    }
+    else {
+        self.autoSuggestTableView.hidden = YES;
+    }
+    
+    
+    return true;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    self.autoSuggestTableView.hidden = YES;
+}
+
+#pragma mark ------------------ Delegates (End) ------------------
+#pragma mark IBAction
+
+-(IBAction)addPhotos:(id)sender {
+    
 }
 
 @end
