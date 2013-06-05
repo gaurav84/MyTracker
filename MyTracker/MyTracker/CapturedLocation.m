@@ -2,11 +2,12 @@
 //  CapturedLocation.m
 //  MyTracker
 //
-//  Created by Gaurav Srivastava on 03/06/13.
+//  Created by Gaurav Srivastava on 05/06/13.
 //  Copyright (c) 2013 Gaurav Srivastava. All rights reserved.
 //
 
 #import "CapturedLocation.h"
+#import "Image.h"
 #import "Member.h"
 
 
@@ -24,5 +25,6 @@
 @dynamic sec;
 @dynamic year;
 @dynamic member;
+@dynamic image;
 
 @end

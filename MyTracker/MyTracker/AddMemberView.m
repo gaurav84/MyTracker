@@ -28,13 +28,13 @@
 }
 
 -(IBAction)addTouched:(id)sender {
-    MemberVO *memberVO = [[MemberVO alloc] init];
-    memberVO.name = self.nameField.text;
-    memberVO.relation = self.relationField.text;
-    
-    [self.capturedDetailsVO.listOfMembers addObject:memberVO];
-    
     if(![self.nameField.text isEqualToString:@""] && ![self.relationField.text isEqualToString:@""]) {
+        MemberVO *memberVO = [[MemberVO alloc] init];
+        memberVO.name = self.nameField.text;
+        memberVO.relation = self.relationField.text;
+    
+        [self.capturedDetailsVO.listOfMembers addObject:memberVO];
+    
         [self removeFromSuperview];
         [[self delegate] updateMemberViewWithName:self.nameField.text andRelation:self.relationField.text];
     }

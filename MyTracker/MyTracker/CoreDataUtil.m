@@ -40,8 +40,6 @@
     capturedLocation.meridian = dateTimeDayVO.meridian;
     capturedLocation.day = dateTimeDayVO.weekday;
     
-
-    
     for(MemberVO *memberVO in capturedDetailsVO.listOfMembers) {
         Member *member = [NSEntityDescription insertNewObjectForEntityForName:@"Member"
                                                        inManagedObjectContext:context];

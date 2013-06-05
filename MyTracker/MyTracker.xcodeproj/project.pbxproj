@@ -21,8 +21,6 @@
 		F807CA8B1744EB8000125570 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F807CA8A1744EB8000125570 /* SystemConfiguration.framework */; };
 		F83A43FD175DDF9F00086988 /* 22alhome_Img8.png in Resources */ = {isa = PBXBuildFile; fileRef = F83A43FC175DDF9F00086988 /* 22alhome_Img8.png */; };
 		F83A4401175DE24200086988 /* AutoSuggest.m in Sources */ = {isa = PBXBuildFile; fileRef = F83A4400175DE24200086988 /* AutoSuggest.m */; };
-		F83D34CC175C58E1006314F5 /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D34CB175C58E1006314F5 /* Member.m */; };
-		F83D34CF175C58E1006314F5 /* CapturedLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F83D34CE175C58E1006314F5 /* CapturedLocation.m */; };
 		F83F8AF7172F806700F8F465 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8AF6172F806700F8F465 /* UIKit.framework */; };
 		F83F8AF9172F806700F8F465 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8AF8172F806700F8F465 /* Foundation.framework */; };
 		F83F8AFB172F806700F8F465 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8AFA172F806700F8F465 /* CoreGraphics.framework */; };
@@ -37,6 +35,11 @@
 		F83F8B1A172F807F00F8F465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8B19172F807F00F8F465 /* CoreLocation.framework */; };
 		F83F8B1E172F80BC00F8F465 /* CoreLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */; };
 		F83F8B23172FA02C00F8F465 /* LocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B22172FA02C00F8F465 /* LocationVO.m */; };
+		F8582AA4175F1E8D00555CBF /* camera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8582AA3175F1E8D00555CBF /* camera.jpg */; };
+		F8582AA6175F1F0100555CBF /* photo-gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = F8582AA5175F1F0100555CBF /* photo-gallery.png */; };
+		F8582AB2175F376400555CBF /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F8582AB1175F376400555CBF /* Image.m */; };
+		F8582AB5175F376500555CBF /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = F8582AB4175F376500555CBF /* Member.m */; };
+		F8582AB8175F376500555CBF /* CapturedLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F8582AB7175F376500555CBF /* CapturedLocation.m */; };
 		F874B41D1753731800B305FE /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = F874B41C1753731800B305FE /* plus.png */; };
 		F8942F59174F484F002AB0A2 /* CapturedDetailsContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = F8942F57174F484F002AB0A2 /* CapturedDetailsContoller.m */; };
 		F8942F5A174F484F002AB0A2 /* CapturedDetailsContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8942F58174F484F002AB0A2 /* CapturedDetailsContoller.xib */; };
@@ -72,10 +75,6 @@
 		F83A43FC175DDF9F00086988 /* 22alhome_Img8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22alhome_Img8.png; sourceTree = "<group>"; };
 		F83A43FF175DE24200086988 /* AutoSuggest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoSuggest.h; sourceTree = "<group>"; };
 		F83A4400175DE24200086988 /* AutoSuggest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoSuggest.m; sourceTree = "<group>"; };
-		F83D34CA175C58E1006314F5 /* Member.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
-		F83D34CB175C58E1006314F5 /* Member.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
-		F83D34CD175C58E1006314F5 /* CapturedLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedLocation.h; sourceTree = "<group>"; };
-		F83D34CE175C58E1006314F5 /* CapturedLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedLocation.m; sourceTree = "<group>"; };
 		F83F8AF3172F806700F8F465 /* MyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83F8AF6172F806700F8F465 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F83F8AF8172F806700F8F465 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +96,14 @@
 		F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationManager.m; sourceTree = "<group>"; };
 		F83F8B21172FA02C00F8F465 /* LocationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationVO.h; sourceTree = "<group>"; };
 		F83F8B22172FA02C00F8F465 /* LocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationVO.m; sourceTree = "<group>"; };
+		F8582AA3175F1E8D00555CBF /* camera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpg; sourceTree = "<group>"; };
+		F8582AA5175F1F0100555CBF /* photo-gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery.png"; sourceTree = "<group>"; };
+		F8582AB0175F376400555CBF /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		F8582AB1175F376400555CBF /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		F8582AB3175F376500555CBF /* Member.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
+		F8582AB4175F376500555CBF /* Member.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
+		F8582AB6175F376500555CBF /* CapturedLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedLocation.h; sourceTree = "<group>"; };
+		F8582AB7175F376500555CBF /* CapturedLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedLocation.m; sourceTree = "<group>"; };
 		F874B41C1753731800B305FE /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		F8942F56174F484E002AB0A2 /* CapturedDetailsContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedDetailsContoller.h; sourceTree = "<group>"; };
 		F8942F57174F484F002AB0A2 /* CapturedDetailsContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedDetailsContoller.m; sourceTree = "<group>"; };
@@ -200,10 +207,12 @@
 		F83D34C3175C586A006314F5 /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
-				F83D34CD175C58E1006314F5 /* CapturedLocation.h */,
-				F83D34CE175C58E1006314F5 /* CapturedLocation.m */,
-				F83D34CA175C58E1006314F5 /* Member.h */,
-				F83D34CB175C58E1006314F5 /* Member.m */,
+				F8582AB6175F376500555CBF /* CapturedLocation.h */,
+				F8582AB7175F376500555CBF /* CapturedLocation.m */,
+				F8582AB3175F376500555CBF /* Member.h */,
+				F8582AB4175F376500555CBF /* Member.m */,
+				F8582AB0175F376400555CBF /* Image.h */,
+				F8582AB1175F376400555CBF /* Image.m */,
 			);
 			name = "Managed Objects";
 			sourceTree = "<group>";
@@ -328,6 +337,8 @@
 		F874B41A175323E200B305FE /* UI Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F8582AA5175F1F0100555CBF /* photo-gallery.png */,
+				F8582AA3175F1E8D00555CBF /* camera.jpg */,
 				F874B41C1753731800B305FE /* plus.png */,
 				F874B41B175323ED00B305FE /* App Icon */,
 			);
@@ -444,6 +455,8 @@
 				F8E0EF2C1754A83F0018289E /* AddMemberView.xib in Resources */,
 				F83A43FD175DDF9F00086988 /* 22alhome_Img8.png in Resources */,
 				F800BCA9175EFB8700608B03 /* ManagePhotosViewController.xib in Resources */,
+				F8582AA4175F1E8D00555CBF /* camera.jpg in Resources */,
+				F8582AA6175F1F0100555CBF /* photo-gallery.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,10 +485,11 @@
 				2F6A26A8175274BE00199A9D /* MemberVO.m in Sources */,
 				2F6609C61753A56B00A5994E /* MemberView.m in Sources */,
 				F8E0EF2A175496EA0018289E /* AddMemberView.m in Sources */,
-				F83D34CC175C58E1006314F5 /* Member.m in Sources */,
-				F83D34CF175C58E1006314F5 /* CapturedLocation.m in Sources */,
 				F83A4401175DE24200086988 /* AutoSuggest.m in Sources */,
 				F800BCA8175EFB8700608B03 /* ManagePhotosViewController.m in Sources */,
+				F8582AB2175F376400555CBF /* Image.m in Sources */,
+				F8582AB5175F376500555CBF /* Member.m in Sources */,
+				F8582AB8175F376500555CBF /* CapturedLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

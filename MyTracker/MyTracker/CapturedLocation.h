@@ -2,14 +2,14 @@
 //  CapturedLocation.h
 //  MyTracker
 //
-//  Created by Gaurav Srivastava on 03/06/13.
+//  Created by Gaurav Srivastava on 05/06/13.
 //  Copyright (c) 2013 Gaurav Srivastava. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Member;
+@class Image, Member;
 
 @interface CapturedLocation : NSManagedObject
 
@@ -25,6 +25,7 @@
 @property (nonatomic, retain) NSNumber * sec;
 @property (nonatomic, retain) NSNumber * year;
 @property (nonatomic, retain) NSSet *member;
+@property (nonatomic, retain) NSSet *image;
 @end
 
 @interface CapturedLocation (CoreDataGeneratedAccessors)
@@ -33,4 +34,8 @@
 - (void)removeMemberObject:(Member *)value;
 - (void)addMember:(NSSet *)values;
 - (void)removeMember:(NSSet *)values;
+- (void)addImageObject:(Image *)value;
+- (void)removeImageObject:(Image *)value;
+- (void)addImage:(NSSet *)values;
+- (void)removeImage:(NSSet *)values;
 @end

@@ -12,7 +12,12 @@
         <attribute name="placeLabel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sec" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="image" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Image" inverseName="capturedLocation" inverseEntity="Image" syncable="YES"/>
         <relationship name="member" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Member" inverseName="capturedLocation" inverseEntity="Member" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="path" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="capturedLocation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CapturedLocation" inverseName="image" inverseEntity="CapturedLocation" syncable="YES"/>
     </entity>
     <entity name="Member" representedClassName="Member" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +25,8 @@
         <relationship name="capturedLocation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CapturedLocation" inverseName="member" inverseEntity="CapturedLocation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CapturedLocation" positionX="-5715" positionY="-522" width="128" height="223"/>
+        <element name="CapturedLocation" positionX="-5706" positionY="-486" width="128" height="238"/>
         <element name="Member" positionX="-5456" positionY="-408" width="128" height="88"/>
+        <element name="Image" positionX="-5924" positionY="-375" width="128" height="73"/>
     </elements>
 </model>

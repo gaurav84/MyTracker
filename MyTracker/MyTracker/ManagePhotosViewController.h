@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CapturedDetailsVO.h"
 
-@interface ManagePhotosViewController : UIViewController
+@interface ManagePhotosViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+    IBOutlet UIScrollView *photosScroller;
+    IBOutlet UIImageView *cameraImageView;
+    IBOutlet UIImageView *galleryImageView;
+}
+
+@property (nonatomic, retain) CapturedDetailsVO *capturedDetailsVO;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  Member.h
+//  Image.h
 //  MyTracker
 //
 //  Created by Gaurav Srivastava on 05/06/13.
@@ -11,10 +11,9 @@
 
 @class CapturedLocation;
 
-@interface Member : NSManagedObject
+@interface Image : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * relation;
+@property (nonatomic, retain) NSData * path;
 @property (nonatomic, retain) CapturedLocation *capturedLocation;
 
 @end

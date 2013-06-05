@@ -1,19 +1,18 @@
 //
-//  Member.m
+//  Image.m
 //  MyTracker
 //
 //  Created by Gaurav Srivastava on 05/06/13.
 //  Copyright (c) 2013 Gaurav Srivastava. All rights reserved.
 //
 
-#import "Member.h"
+#import "Image.h"
 #import "CapturedLocation.h"
 
 
-@implementation Member
+@implementation Image
 
-@dynamic name;
-@dynamic relation;
+@dynamic path;
 @dynamic capturedLocation;
 
 @end

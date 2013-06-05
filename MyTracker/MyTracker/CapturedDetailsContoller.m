@@ -15,6 +15,7 @@
 #import "AlertUtil.h"
 #import "DateTimeUtil.h"
 #import "AddMemberView.h"
+#import "ManagePhotosViewController.h"
 
 @interface CapturedDetailsContoller ()
 
@@ -40,7 +41,10 @@
     
     self.autoSuggestTableView.autoSuggestDelegate = self;
     self.memberView.memberViewDelegate = self;
+    
+    // initializing core data variables
     self.capturedDetailsVO.listOfMembers = [[NSMutableArray alloc] init];
+    self.capturedDetailsVO.listOfPhotos = [[NSMutableArray alloc] init];
     
     // setting top left and top right buttons
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(initCoreDataToSaveDetails:)];
@@ -203,10 +207,13 @@
 }
 
 #pragma mark ------------------ Delegates (End) ------------------
+
 #pragma mark IBAction
 
 -(IBAction)addPhotos:(id)sender {
-   
+    ManagePhotosViewController *managePhotosViewController = [[ManagePhotosViewController alloc] init];
+    managePhotosViewController.capturedDetailsVO = self.capturedDetailsVO;
+    [self.navigationController pushViewController:managePhotosViewController animated:YES];
 }
 
 @end
