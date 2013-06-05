@@ -6,12 +6,16 @@
 //  Copyright (c) 2013 Gaurav Srivastava. All rights reserved.
 //
 
+// API
+#import <QuartzCore/QuartzCore.h>
+
+// Custom
 #import "CapturedDetailsContoller.h"
 #import "CoreDataUtil.h"
 #import "AlertUtil.h"
 #import "DateTimeUtil.h"
 #import "AddMemberView.h"
-#import <QuartzCore/QuartzCore.h>
+#import "ActionSheetUtil.h"
 
 @interface CapturedDetailsContoller ()
 
@@ -170,7 +174,6 @@
     self.autoSuggestTableView.hidden = YES;
 }
 
-
 #pragma mark Text Field delegate
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -204,7 +207,7 @@
 #pragma mark IBAction
 
 -(IBAction)addPhotos:(id)sender {
-    
+   
 }
 
 @end
