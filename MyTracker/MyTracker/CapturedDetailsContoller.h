@@ -11,12 +11,10 @@
 #import "MemberView.h"
 #import "AddMemberView.h"
 #import "AutoSuggest.h"
-#import "ActionSheetUtil.h"
 
 @interface CapturedDetailsContoller : UIViewController <UITextFieldDelegate,
                                                         UINavigationControllerDelegate,
                                                         UIImagePickerControllerDelegate,
-                                                        ActionSheetDelegate,
                                                         AutoSuggestDelegate,
                                                         MemberViewDelegate,
                                                         AddMemberViewDelegate>

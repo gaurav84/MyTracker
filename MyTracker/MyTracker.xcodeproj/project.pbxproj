@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2F2691C617350826000DD8ED /* CoreDataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C517350826000DD8ED /* CoreDataFactory.m */; };
 		2F2691CA17350933000DD8ED /* CoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F2691C917350933000DD8ED /* CoreDataUtil.m */; };
-		2F3E38A4175E4076003FDCB2 /* ActionSheetUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F3E38A3175E4076003FDCB2 /* ActionSheetUtil.m */; };
 		2F6609C61753A56B00A5994E /* MemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6609C51753A56B00A5994E /* MemberView.m */; };
 		2F6A26A8175274BE00199A9D /* MemberVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6A26A7175274BE00199A9D /* MemberVO.m */; };
 		2F7DCDB11733F0C400C918FF /* CapturedDetailsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */; };
@@ -54,8 +53,6 @@
 		2F2691C517350826000DD8ED /* CoreDataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataFactory.m; sourceTree = "<group>"; };
 		2F2691C817350933000DD8ED /* CoreDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataUtil.h; sourceTree = "<group>"; };
 		2F2691C917350933000DD8ED /* CoreDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataUtil.m; sourceTree = "<group>"; };
-		2F3E38A2175E4076003FDCB2 /* ActionSheetUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetUtil.h; sourceTree = "<group>"; };
-		2F3E38A3175E4076003FDCB2 /* ActionSheetUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetUtil.m; sourceTree = "<group>"; };
 		2F6609C41753A56B00A5994E /* MemberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberView.h; sourceTree = "<group>"; };
 		2F6609C51753A56B00A5994E /* MemberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberView.m; sourceTree = "<group>"; };
 		2F6A26A6175274BE00199A9D /* MemberVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberVO.h; sourceTree = "<group>"; };
@@ -134,15 +131,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F3E38A0175E4054003FDCB2 /* ActionSheet */ = {
-			isa = PBXGroup;
-			children = (
-				2F3E38A2175E4076003FDCB2 /* ActionSheetUtil.h */,
-				2F3E38A3175E4076003FDCB2 /* ActionSheetUtil.m */,
-			);
-			name = ActionSheet;
-			sourceTree = "<group>";
-		};
 		2FF4A0BC1734FC9F001CCE74 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,7 +365,6 @@
 		F8C911B0172FBC2100CE2C35 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				2F3E38A0175E4054003FDCB2 /* ActionSheet */,
 				F807CA811744DBBE00125570 /* Internet Availability */,
 				F807CA7E1744DBA400125570 /* DateTime */,
 				F807CA7F1744DBAD00125570 /* Core Data */,
@@ -489,7 +476,6 @@
 				F83D34CF175C58E1006314F5 /* CapturedLocation.m in Sources */,
 				F83A4401175DE24200086988 /* AutoSuggest.m in Sources */,
 				F800BCA8175EFB8700608B03 /* ManagePhotosViewController.m in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
