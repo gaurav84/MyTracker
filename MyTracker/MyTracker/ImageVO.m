@@ -1,18 +1,13 @@
 //
-//  Image.m
+//  ImageVO.m
 //  MyTracker
 //
 //  Created by Gaurav Srivastava on 06/06/13.
 //  Copyright (c) 2013 Gaurav Srivastava. All rights reserved.
 //
 
-#import "Image.h"
-#import "CapturedLocation.h"
+#import "ImageVO.h"
 
-
-@implementation Image
-
-@dynamic ref;
-@dynamic capturedLocation;
+@implementation ImageVO
 
 @end

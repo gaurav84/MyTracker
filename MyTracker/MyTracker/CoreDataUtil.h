@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CapturedDetailsVO.h"
+#import <CoreData/CoreData.h>
 
 @interface CoreDataUtil : NSObject
 

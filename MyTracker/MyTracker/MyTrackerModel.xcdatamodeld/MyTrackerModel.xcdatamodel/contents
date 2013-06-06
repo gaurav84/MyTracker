@@ -16,7 +16,7 @@
         <relationship name="member" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Member" inverseName="capturedLocation" inverseEntity="Member" syncable="YES"/>
     </entity>
     <entity name="Image" representedClassName="Image" syncable="YES">
-        <attribute name="path" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="ref" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="capturedLocation" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CapturedLocation" inverseName="image" inverseEntity="CapturedLocation" syncable="YES"/>
     </entity>
     <entity name="Member" representedClassName="Member" syncable="YES">
@@ -26,7 +26,7 @@
     </entity>
     <elements>
         <element name="CapturedLocation" positionX="-5706" positionY="-486" width="128" height="238"/>
+        <element name="Image" positionX="-5924" positionY="-375" width="128" height="75"/>
         <element name="Member" positionX="-5456" positionY="-408" width="128" height="88"/>
-        <element name="Image" positionX="-5924" positionY="-375" width="128" height="73"/>
     </elements>
 </model>

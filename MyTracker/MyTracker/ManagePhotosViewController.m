@@ -7,6 +7,7 @@
 //
 
 #import "ManagePhotosViewController.h"
+#import "ImageVO.h"
 
 @interface ManagePhotosViewController ()
 
@@ -68,8 +69,13 @@
 #pragma mark 
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
+    [picker dismissModalViewControllerAnimated:YES];
+    UIImage *img = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(img)];
+    
+    ImageVO *imageVO = [[ImageVO alloc] init];
+    imageVO.ref = imageData;
+    [self.capturedDetailsVO.listOfPhotos addObject:imageVO];
     
 }
 

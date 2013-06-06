@@ -12,6 +12,8 @@
 #import "CoreDataFactory.h"
 #import "CapturedLocation.h"
 #import "Member.h"
+#import "ImageVO.h"
+#import "Image.h"
 
 @implementation CoreDataUtil
 
@@ -50,6 +52,14 @@
         [capturedLocation addMemberObject:member];
     }
     
+    for(ImageVO *imageVO in capturedDetailsVO.listOfPhotos) {
+        Image *image = [NSEntityDescription insertNewObjectForEntityForName:@"Image"
+                                                       inManagedObjectContext:context];
+        
+        image.ref = imageVO.ref;
+        [capturedLocation addImageObject:image];
+    }
+    
     if (![context save:&error]) {
         AppLog(@"Error saving in core data: %@", [error localizedDescription]);
         return false;
@@ -73,13 +83,19 @@
     
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
-    for (NSManagedObject *model in fetchedObjects) {        
-        NSSet *set = [(CapturedLocation *)model member];
-        AppLog(@"%d", [set count]);
-        for(Member *member in set) {
-            AppLog(@"Member: %@", member);
-        }
+    AppLog(@" ------------ Core data details -------------------- ");
+    AppLog(@"Total fetched objects: %d", [fetchedObjects count]);
+    
+    int index = 0;
+    
+    for (NSManagedObject *model in fetchedObjects) {
+        index ++;
+        AppLog(@"%d) NSManagedObject: %@", index, model);
+        AppLog(@"Place Label: %@", [model valueForKey:@"placeLabel"]);
+        AppLog(@"Total members: %d", [[(CapturedLocation *)model member] count]);
+        AppLog(@"Total photos: %d", [[(CapturedLocation *)model image] count]);
     }
+    AppLog(@" --------------------------------------------------- ");
     
     return nil;
 }

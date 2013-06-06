@@ -37,7 +37,6 @@
 		F83F8B23172FA02C00F8F465 /* LocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B22172FA02C00F8F465 /* LocationVO.m */; };
 		F8582AA4175F1E8D00555CBF /* camera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8582AA3175F1E8D00555CBF /* camera.jpg */; };
 		F8582AA6175F1F0100555CBF /* photo-gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = F8582AA5175F1F0100555CBF /* photo-gallery.png */; };
-		F8582AB2175F376400555CBF /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F8582AB1175F376400555CBF /* Image.m */; };
 		F8582AB5175F376500555CBF /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = F8582AB4175F376500555CBF /* Member.m */; };
 		F8582AB8175F376500555CBF /* CapturedLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F8582AB7175F376500555CBF /* CapturedLocation.m */; };
 		F874B41D1753731800B305FE /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = F874B41C1753731800B305FE /* plus.png */; };
@@ -46,6 +45,8 @@
 		F8B0CC6C1743823400C92482 /* AlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B0CC6B1743823400C92482 /* AlertUtil.m */; };
 		F8C911B4172FBC5300CE2C35 /* DateTimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C911B3172FBC5300CE2C35 /* DateTimeUtil.m */; };
 		F8C911B8172FD15400CE2C35 /* DateTimeDayVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C911B7172FD15400CE2C35 /* DateTimeDayVO.m */; };
+		F8C9F6661760750600CC5BC2 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9F6651760750600CC5BC2 /* Image.m */; };
+		F8C9F669176080AD00CC5BC2 /* ImageVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C9F668176080AD00CC5BC2 /* ImageVO.m */; };
 		F8E0EF2A175496EA0018289E /* AddMemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8E0EF29175496EA0018289E /* AddMemberView.m */; };
 		F8E0EF2C1754A83F0018289E /* AddMemberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8E0EF2B1754A83F0018289E /* AddMemberView.xib */; };
 		F8E0EF2E1754B4730018289E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E0EF2D1754B4730018289E /* QuartzCore.framework */; };
@@ -98,8 +99,6 @@
 		F83F8B22172FA02C00F8F465 /* LocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationVO.m; sourceTree = "<group>"; };
 		F8582AA3175F1E8D00555CBF /* camera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpg; sourceTree = "<group>"; };
 		F8582AA5175F1F0100555CBF /* photo-gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery.png"; sourceTree = "<group>"; };
-		F8582AB0175F376400555CBF /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		F8582AB1175F376400555CBF /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		F8582AB3175F376500555CBF /* Member.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
 		F8582AB4175F376500555CBF /* Member.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Member.m; sourceTree = "<group>"; };
 		F8582AB6175F376500555CBF /* CapturedLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedLocation.h; sourceTree = "<group>"; };
@@ -114,6 +113,10 @@
 		F8C911B3172FBC5300CE2C35 /* DateTimeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeUtil.m; sourceTree = "<group>"; };
 		F8C911B6172FD15400CE2C35 /* DateTimeDayVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTimeDayVO.h; sourceTree = "<group>"; };
 		F8C911B7172FD15400CE2C35 /* DateTimeDayVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTimeDayVO.m; sourceTree = "<group>"; };
+		F8C9F6641760750600CC5BC2 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		F8C9F6651760750600CC5BC2 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		F8C9F667176080AD00CC5BC2 /* ImageVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageVO.h; sourceTree = "<group>"; };
+		F8C9F668176080AD00CC5BC2 /* ImageVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageVO.m; sourceTree = "<group>"; };
 		F8E0EF28175496EA0018289E /* AddMemberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMemberView.h; sourceTree = "<group>"; };
 		F8E0EF29175496EA0018289E /* AddMemberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMemberView.m; sourceTree = "<group>"; };
 		F8E0EF2B1754A83F0018289E /* AddMemberView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMemberView.xib; sourceTree = "<group>"; };
@@ -211,8 +214,8 @@
 				F8582AB7175F376500555CBF /* CapturedLocation.m */,
 				F8582AB3175F376500555CBF /* Member.h */,
 				F8582AB4175F376500555CBF /* Member.m */,
-				F8582AB0175F376400555CBF /* Image.h */,
-				F8582AB1175F376400555CBF /* Image.m */,
+				F8C9F6641760750600CC5BC2 /* Image.h */,
+				F8C9F6651760750600CC5BC2 /* Image.m */,
 			);
 			name = "Managed Objects";
 			sourceTree = "<group>";
@@ -312,6 +315,8 @@
 				2F6A26A7175274BE00199A9D /* MemberVO.m */,
 				2F7DCDAF1733F0C400C918FF /* CapturedDetailsVO.h */,
 				2F7DCDB01733F0C400C918FF /* CapturedDetailsVO.m */,
+				F8C9F667176080AD00CC5BC2 /* ImageVO.h */,
+				F8C9F668176080AD00CC5BC2 /* ImageVO.m */,
 			);
 			name = VO;
 			sourceTree = "<group>";
@@ -487,9 +492,10 @@
 				F8E0EF2A175496EA0018289E /* AddMemberView.m in Sources */,
 				F83A4401175DE24200086988 /* AutoSuggest.m in Sources */,
 				F800BCA8175EFB8700608B03 /* ManagePhotosViewController.m in Sources */,
-				F8582AB2175F376400555CBF /* Image.m in Sources */,
 				F8582AB5175F376500555CBF /* Member.m in Sources */,
 				F8582AB8175F376500555CBF /* CapturedLocation.m in Sources */,
+				F8C9F6661760750600CC5BC2 /* Image.m in Sources */,
+				F8C9F669176080AD00CC5BC2 /* ImageVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

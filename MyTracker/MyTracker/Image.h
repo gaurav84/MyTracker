@@ -2,7 +2,7 @@
 //  Image.h
 //  MyTracker
 //
-//  Created by Gaurav Srivastava on 05/06/13.
+//  Created by Gaurav Srivastava on 06/06/13.
 //  Copyright (c) 2013 Gaurav Srivastava. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface Image : NSManagedObject
 
-@property (nonatomic, retain) NSData * path;
+@property (nonatomic, retain) NSData * ref;
 @property (nonatomic, retain) CapturedLocation *capturedLocation;
 
 @end

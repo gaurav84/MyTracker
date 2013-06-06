@@ -14,6 +14,7 @@
 #import "AlertUtil.h"
 #import "CapturedDetailsContoller.h"
 #import "InternetUtil.h"
+#import "CoreDataUtil.h"
 
 @interface CaptureDetailsController ()
 
@@ -92,6 +93,9 @@
     else {
         [AlertUtil showAlertWithMessage:@"Please connect to internet."];
     }
+    
+//    CoreDataUtil *core = [[CoreDataUtil alloc] init];
+//    [core getCapturedDetails];
 }
 
 #pragma mark
