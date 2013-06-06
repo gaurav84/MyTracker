@@ -17,26 +17,15 @@
 
 #pragma mark View lifecycle
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setUpGestures];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    AppLog(@"Received memory warning!");
 }
 
 #pragma mark Gestures setup
@@ -66,17 +55,23 @@
     
 }
 
-#pragma mark 
+#pragma mark UIImagePickerController delegate
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissModalViewControllerAnimated:YES];
-    UIImage *img = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(img)];
+
+    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation([info objectForKey:@"UIImagePickerControllerOriginalImage"])];
     
-    ImageVO *imageVO = [[ImageVO alloc] init];
-    imageVO.ref = imageData;
-    [self.capturedDetailsVO.listOfPhotos addObject:imageVO];
+    [self.allPhotosDisplayView showImageWithData:imageData];
     
+//    ImageVO *imageVO = [[ImageVO alloc] init];
+//    imageVO.ref = imageData;
+//    [self.capturedDetailsVO.listOfPhotos addObject:imageVO];
+
+//    self.allPhotosDisplayView.source = self.capturedDetailsVO.listOfPhotos;
+//    [self.allPhotosDisplayView refreshView];
 }
+
+#pragma mark 
 
 @end

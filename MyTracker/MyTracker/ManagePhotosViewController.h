@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CapturedDetailsVO.h"
+#import "AllPhotosDisplayView.h"
 
 @interface ManagePhotosViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     IBOutlet UIScrollView *photosScroller;
@@ -16,5 +17,8 @@
 }
 
 @property (nonatomic, retain) CapturedDetailsVO *capturedDetailsVO;
+
+// IBOutlet
+@property (nonatomic, retain) IBOutlet AllPhotosDisplayView *allPhotosDisplayView;
 
 @end
