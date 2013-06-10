@@ -48,8 +48,6 @@
     
     // setting top left and top right buttons
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(initCoreDataToSaveDetails:)];
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(dismissModalViewControllerAnimated:)];
-    [self.navigationItem setLeftBarButtonItem:cancelButton];
     [self.navigationItem setRightBarButtonItem:saveButton];
     
     // setting title of screen

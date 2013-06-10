@@ -16,6 +16,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) CaptureDetailsController *viewController;
+@property (strong, nonatomic) UINavigationController *navController;
 
 
 @end

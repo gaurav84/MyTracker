@@ -30,6 +30,14 @@
     self.coreLocationManager.delegate = self;
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    //[self.view setFrame:CGRectMake(0, 0, 320, 568)];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     AppLog(@"Received memory warning!");
@@ -71,6 +79,7 @@
 
 -(void)initialSettings {
     [self setActivityIndicatorVisible:NO];
+    self.title = @"My Tracker";
 }
 
 #pragma mark Captured Details Controller
@@ -79,8 +88,11 @@
     CapturedDetailsContoller *capturedDetailsContoller = [[CapturedDetailsContoller alloc] init];
     capturedDetailsContoller.capturedDetailsVO = capturedDetailsVO;
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:capturedDetailsContoller];
-    [self presentModalViewController:navigationController animated:YES];
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:capturedDetailsContoller];
+//    [self presentModalViewController:navigationController animated:YES];
+    
+       
+    [self.navigationController pushViewController:capturedDetailsContoller animated:YES];
 }
 
 #pragma mark IBAction
