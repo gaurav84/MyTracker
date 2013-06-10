@@ -8,6 +8,7 @@
 
 #import "ManagePhotosViewController.h"
 #import "ImageVO.h"
+#import "AlertUtil.h"
 
 @interface ManagePhotosViewController ()
 
@@ -43,16 +44,24 @@
 #pragma mark Camera gesture handler
 
 -(void)cameraImageViewTouched:(UITapGestureRecognizer *)gesture {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
-    imagePicker.delegate = self;
-    [self presentModalViewController:imagePicker animated:YES];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+        imagePicker.delegate = self;
+        [self presentModalViewController:imagePicker animated:YES];
+    }
+    else {
+        [AlertUtil showAlertWithMessage:@"Camera not found"];
+    }
 }
 
 #pragma mark Local gallery gesture handler
 
 -(void)galleryImageViewTouched:(UITapGestureRecognizer *)gesture {
-    
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentModalViewController:imagePickerController animated:YES];
 }
 
 #pragma mark UIImagePickerController delegate

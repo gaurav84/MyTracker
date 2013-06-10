@@ -30,12 +30,8 @@
     self.coreLocationManager.delegate = self;
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    //[self.view setFrame:CGRectMake(0, 0, 320, 568)];
-}
-
 -(void)viewDidAppear:(BOOL)animated {
-    
+    [self.view setFrame:CGRectMake(0, 0, 320, 568)];
 }
 
 - (void)didReceiveMemoryWarning {

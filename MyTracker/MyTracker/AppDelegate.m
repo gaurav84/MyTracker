@@ -17,11 +17,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.viewController = [[CaptureDetailsController alloc] initWithNibName:@"CaptureDetailsController" bundle:nil];
     self.window.rootViewController = self.viewController;
-    
+
     self.navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     [self.window addSubview:self.navController.view];
-
-    
 
     [self.window makeKeyAndVisible];
     return YES;
