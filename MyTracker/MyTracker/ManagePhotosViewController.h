@@ -11,6 +11,10 @@
 #import "AllPhotosDisplayView.h"
 
 @interface ManagePhotosViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+    UIImagePickerController *imagePickerController;
+    NSMutableArray *selectedPhotos;
+    
+    // IBOutlet
     IBOutlet UIScrollView *photosScroller;
     IBOutlet UIImageView *cameraImageView;
     IBOutlet UIImageView *galleryImageView;

@@ -35,6 +35,8 @@
 		F83F8B1A172F807F00F8F465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8B19172F807F00F8F465 /* CoreLocation.framework */; };
 		F83F8B1E172F80BC00F8F465 /* CoreLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */; };
 		F83F8B23172FA02C00F8F465 /* LocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B22172FA02C00F8F465 /* LocationVO.m */; };
+		F842D7DF17671C2400CE3FB1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F842D7DE17671C2400CE3FB1 /* AssetsLibrary.framework */; };
+		F842D7E317672D3800CE3FB1 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F842D7E217672D3800CE3FB1 /* checkmark.png */; };
 		F8582AA4175F1E8D00555CBF /* camera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8582AA3175F1E8D00555CBF /* camera.jpg */; };
 		F8582AA6175F1F0100555CBF /* photo-gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = F8582AA5175F1F0100555CBF /* photo-gallery.png */; };
 		F8582AB5175F376500555CBF /* Member.m in Sources */ = {isa = PBXBuildFile; fileRef = F8582AB4175F376500555CBF /* Member.m */; };
@@ -99,6 +101,8 @@
 		F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationManager.m; sourceTree = "<group>"; };
 		F83F8B21172FA02C00F8F465 /* LocationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationVO.h; sourceTree = "<group>"; };
 		F83F8B22172FA02C00F8F465 /* LocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationVO.m; sourceTree = "<group>"; };
+		F842D7DE17671C2400CE3FB1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F842D7E217672D3800CE3FB1 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		F8582AA3175F1E8D00555CBF /* camera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpg; sourceTree = "<group>"; };
 		F8582AA5175F1F0100555CBF /* photo-gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-gallery.png"; sourceTree = "<group>"; };
 		F8582AB3175F376500555CBF /* Member.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Member.h; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F842D7DF17671C2400CE3FB1 /* AssetsLibrary.framework in Frameworks */,
 				F8E0EF2E1754B4730018289E /* QuartzCore.framework in Frameworks */,
 				F807CA8B1744EB8000125570 /* SystemConfiguration.framework in Frameworks */,
 				2FF4A0C11734FDE3001CCE74 /* CoreData.framework in Frameworks */,
@@ -229,6 +234,7 @@
 		F83F8AEA172F806700F8F465 = {
 			isa = PBXGroup;
 			children = (
+				F842D7DE17671C2400CE3FB1 /* AssetsLibrary.framework */,
 				F8E0EF2D1754B4730018289E /* QuartzCore.framework */,
 				F807CA8A1744EB8000125570 /* SystemConfiguration.framework */,
 				2FF4A0C01734FDE3001CCE74 /* CoreData.framework */,
@@ -350,6 +356,7 @@
 		F874B41A175323E200B305FE /* UI Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F842D7E217672D3800CE3FB1 /* checkmark.png */,
 				F8582AA5175F1F0100555CBF /* photo-gallery.png */,
 				F8582AA3175F1E8D00555CBF /* camera.jpg */,
 				F874B41C1753731800B305FE /* plus.png */,
@@ -488,6 +495,7 @@
 				F800BCA9175EFB8700608B03 /* ManagePhotosViewController.xib in Resources */,
 				F8582AA4175F1E8D00555CBF /* camera.jpg in Resources */,
 				F8582AA6175F1F0100555CBF /* photo-gallery.png in Resources */,
+				F842D7E317672D3800CE3FB1 /* checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

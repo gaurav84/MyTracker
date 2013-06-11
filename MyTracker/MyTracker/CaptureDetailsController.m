@@ -24,14 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self initialSettings];
     self.coreLocationManager = [CoreLocationManager getInstance];
     self.coreLocationManager.delegate = self;
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [self.view setFrame:CGRectMake(0, 0, 320, 568)];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -12,6 +12,7 @@
 
 @property (nonatomic, retain) NSMutableArray *source;
 
--(void)showImageWithData:(NSData *)imageData;
+-(void)showImage:(id)arg;
+-(void)showCheckmarkOnSelectedImage:(UIImage *)image;
 
 @end
