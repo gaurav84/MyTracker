@@ -30,18 +30,14 @@ int scrollCount = 0;
 
 #pragma mark Showing image
 
--(void)showImage:(id)arg {
+-(void)showImage:(NSData *)data {
     currentPhotoIndex++;
     CGRect availableSlot = [self getNextAvailableSlotForIndex:currentPhotoIndex];
     
     PhotoView *photoView = [[PhotoView alloc] initWithFrame:availableSlot];
     [self addSubview:photoView];
-    
-    if([arg isKindOfClass:[NSData class]])
-        [photoView showImageWithData:arg];
-    else
-        [photoView showImageWithUrl:arg];
-    
+    [photoView showImageWithData:data];
+
     [self manageContentSizeForIndex:currentPhotoIndex];
 }
 
@@ -71,9 +67,6 @@ int scrollCount = 0;
         scrollCount ++;
         [self setContentSize:CGSizeMake(0, scrollCount * photoHeight + 20)];
     }
-}
-
--(void)showCheckmarkOnSelectedImage:(UIImage *)image {
 }
 
 

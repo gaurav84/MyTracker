@@ -13,6 +13,5 @@
 @property (nonatomic, retain) NSData *imageData;
 
 -(void)showImageWithData:(NSData *)data;
--(void)showImageWithUrl:(NSString *)url;
 
 @end
