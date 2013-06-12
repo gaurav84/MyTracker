@@ -62,6 +62,10 @@
 //    imagePickerController.delegate = self;
 //    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 //    [self presentModalViewController:imagePickerController animated:YES];
+    
+    photoGalleryManager = [[PhotoGalleryManager alloc] init];
+    photoGalleryManager.delegate = self;
+    [photoGalleryManager showGalleryPhotosInViewController:self];
 }
 
 #pragma mark UIImagePickerController delegate
@@ -81,5 +85,23 @@
 //    self.allPhotosDisplayView.source = self.capturedDetailsVO.listOfPhotos;
 //    [self.allPhotosDisplayView refreshView];
 }
+
+#pragma mark PhotoGalleryManger delegate
+
+-(void)didFinishPickingImages:(NSArray *)selectedPhotos {
+    for(int i=0; i<[selectedPhotos count]; i++) {
+        UIImage *image = [selectedPhotos objectAtIndex:i];
+        NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
+        [self.allPhotosDisplayView showImage:imageData];
+    }
+    [self dismissModalViewControllerAnimated:YES];
+
+}
+
+-(void)didCancel {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark
 
 @end

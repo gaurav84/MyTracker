@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "CapturedDetailsVO.h"
 #import "AllPhotosDisplayView.h"
+#import "PhotoGalleryManager.h"
 
-@interface ManagePhotosViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
-
+@interface ManagePhotosViewController : UIViewController <UINavigationControllerDelegate,
+                                                            UIImagePickerControllerDelegate,
+                                                            PhotoGalleryManagerDelegate> {
+    PhotoGalleryManager *photoGalleryManager;
+    
     // IBOutlet
     IBOutlet UIScrollView *photosScroller;
     IBOutlet UIImageView *cameraImageView;

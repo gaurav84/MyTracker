@@ -23,6 +23,7 @@
 
 -(void)showImageWithData:(NSData *)data {
     self.image = [UIImage imageWithData:data];
+    self.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 
