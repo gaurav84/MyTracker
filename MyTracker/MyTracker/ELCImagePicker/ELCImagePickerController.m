@@ -25,9 +25,14 @@
 
 - (void)selectedAssets:(NSArray *)assets
 {
+    [self performSelector:@selector(doProcess:) withObject:assets afterDelay:2.1];
+}
+
+- (void)doProcess:(NSArray *)_assets {
+    
 	NSMutableArray *returnArray = [[[NSMutableArray alloc] init] autorelease];
 	
-	for(ALAsset *asset in assets) {
+	for(ALAsset *asset in _assets) {
 
 		NSMutableDictionary *workingDictionary = [[NSMutableDictionary alloc] init];
 		[workingDictionary setObject:[asset valueForProperty:ALAssetPropertyType] forKey:@"UIImagePickerControllerMediaType"];
@@ -40,8 +45,7 @@
         [workingDictionary setObject:img forKey:@"UIImagePickerControllerOriginalImage"];
 		[workingDictionary setObject:[[asset valueForProperty:ALAssetPropertyURLs] valueForKey:[[[asset valueForProperty:ALAssetPropertyURLs] allKeys] objectAtIndex:0]] forKey:@"UIImagePickerControllerReferenceURL"];
 		
-		[returnArray addObject:workingDictionary];
-		
+		[returnArray addObject:workingDictionary];        
 		[workingDictionary release];	
 	}    
 	if(_myDelegate != nil && [_myDelegate respondsToSelector:@selector(elcImagePickerController:didFinishPickingMediaWithInfo:)]) {

@@ -21,11 +21,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpGestures];
+    [self setUpNotifications];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     AppLog(@"Received memory warning!");
+}
+
+#pragma mark Notifications
+
+-(void)setUpNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didStartCopyImagesFromGallery:)
+                                                 name:@"COPY_IMAGES"
+                                               object:nil];
+}
+
+
+#pragma mark Notifcation handler
+
+-(void)didStartCopyImagesFromGallery:(NSNotification *)notification {
+    AppLog(@"START");
 }
 
 #pragma mark Gestures setup
@@ -58,10 +75,6 @@
 #pragma mark Local gallery gesture handler
 
 -(void)galleryImageViewTouched:(UITapGestureRecognizer *)gesture {
-//    imagePickerController = [[UIImagePickerController alloc] init];
-//    imagePickerController.delegate = self;
-//    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//    [self presentModalViewController:imagePickerController animated:YES];
     
     photoGalleryManager = [[PhotoGalleryManager alloc] init];
     photoGalleryManager.delegate = self;
@@ -89,13 +102,16 @@
 #pragma mark PhotoGalleryManger delegate
 
 -(void)didFinishPickingImages:(NSArray *)selectedPhotos {
+    int index = 0;
     for(int i=0; i<[selectedPhotos count]; i++) {
         UIImage *image = [selectedPhotos objectAtIndex:i];
         NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
         [self.allPhotosDisplayView showImage:imageData];
+        index ++;
+        AppLog(@"%d / %d DONE", index, [selectedPhotos count]);
     }
     [self dismissModalViewControllerAnimated:YES];
-
+    AppLog(@"FINSIH");
 }
 
 -(void)didCancel {

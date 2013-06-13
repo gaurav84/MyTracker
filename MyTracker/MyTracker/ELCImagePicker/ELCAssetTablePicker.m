@@ -102,7 +102,8 @@
 }
 
 - (void)doneAction:(id)sender
-{	
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"COPY_IMAGES" object:nil];
 	NSMutableArray *selectedAssetsImages = [[[NSMutableArray alloc] init] autorelease];
 	    
 	for(ELCAsset *elcAsset in self.elcAssets) {
