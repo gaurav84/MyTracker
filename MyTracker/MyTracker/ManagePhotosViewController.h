@@ -10,12 +10,15 @@
 #import "CapturedDetailsVO.h"
 #import "AllPhotosDisplayView.h"
 #import "PhotoGalleryManager.h"
+#import "ProgressView.h"
 
 @interface ManagePhotosViewController : UIViewController <UINavigationControllerDelegate,
                                                             UIImagePickerControllerDelegate,
                                                             PhotoGalleryManagerDelegate> {
     PhotoGalleryManager *photoGalleryManager;
+    ProgressView *progressView;
     
+                                                                
     // IBOutlet
     IBOutlet UIScrollView *photosScroller;
     IBOutlet UIImageView *cameraImageView;
@@ -23,7 +26,7 @@
 }
 
 @property (nonatomic, retain) CapturedDetailsVO *capturedDetailsVO;
-
+@property (nonatomic, retain) NSArray *params;
 // IBOutlet
 @property (nonatomic, retain) IBOutlet AllPhotosDisplayView *allPhotosDisplayView;
 

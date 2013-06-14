@@ -16,6 +16,10 @@
 
 @synthesize delegate = _myDelegate;
 
+-(void)viewDidLoad {
+    self.elcContainerView = self.view;
+}
+
 - (void)cancelImagePicker
 {
 	if([_myDelegate respondsToSelector:@selector(elcImagePickerControllerDidCancel:)]) {
