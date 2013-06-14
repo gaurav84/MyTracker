@@ -17,7 +17,7 @@
                                                             PhotoGalleryManagerDelegate> {
     PhotoGalleryManager *photoGalleryManager;
     ProgressView *progressView;
-    
+                                                                UIView *yourSubView;
                                                                 
     // IBOutlet
     IBOutlet UIScrollView *photosScroller;

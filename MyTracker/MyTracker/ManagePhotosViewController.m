@@ -48,8 +48,14 @@
 
 -(void)didStartCopyImagesFromGallery:(NSNotification *)notification {
     AppLog(@"START");
+
+    progressView = [[ProgressView alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];
+//    [photoGalleryManager.containerView addSubview:progressView];
+
+    UIWindow *wind = [[UIApplication sharedApplication] keyWindow];
+    [wind addSubview:progressView];
     
-    [self setUpProgressView];
+    //[self setUpProgressView];
 }
 
 #pragma mark Gestures setup
@@ -116,12 +122,13 @@
         [self.allPhotosDisplayView showImage:imageData];
         index ++;
         
-
         [progressView updateLabelWithProgress:[NSString stringWithFormat:@"%d / %d", index, [selectedPhotos count]]];
         AppLog(@"%d / %d DONE", index, [selectedPhotos count]);
     }
     [self dismissModalViewControllerAnimated:YES];
     AppLog(@"FINSIH");
+    
+    [progressView removeFromSuperview];
 }
 
 -(void)didCancel {

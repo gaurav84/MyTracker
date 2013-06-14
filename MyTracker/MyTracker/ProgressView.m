@@ -26,8 +26,9 @@
 
 -(void)updateLabelWithProgress:(NSString *)progress {
     NSLog(@"PROGRESS: %@", progress);
+
     self.progressLabel.text = progress;
-    [self setNeedsDisplay];
+    
 }
 
 
