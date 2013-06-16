@@ -29,6 +29,11 @@
     AppLog(@"Received memory warning!");
 }
 
+-(void)setUpProgressView {
+    progressView = [[ProgressView alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];
+    [photoGalleryManager.containerView addSubview:progressView];
+}
+
 #pragma mark Notifications
 
 -(void)setUpNotifications {
@@ -43,6 +48,7 @@
 
 -(void)didStartCopyImagesFromGallery:(NSNotification *)notification {
     AppLog(@"COPY STARTED");
+
 }
 
 #pragma mark Gestures setup
@@ -108,10 +114,14 @@
         NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
         [self.allPhotosDisplayView showImage:imageData];
         index ++;
+        
+        [progressView updateLabelWithProgress:[NSString stringWithFormat:@"%d / %d", index, [selectedPhotos count]]];
         AppLog(@"%d / %d DONE", index, [selectedPhotos count]);
     }
     [self dismissModalViewControllerAnimated:YES];
     AppLog(@"FINSIH");
+    
+    [progressView removeFromSuperview];
 }
 
 -(void)didCancel {
@@ -119,5 +129,6 @@
 }
 
 #pragma mark
+
 
 @end

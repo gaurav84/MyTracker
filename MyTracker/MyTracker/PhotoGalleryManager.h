@@ -19,6 +19,7 @@
 @interface PhotoGalleryManager : NSObject <ELCImagePickerControllerDelegate>
 
 @property (nonatomic, retain) id<PhotoGalleryManagerDelegate> delegate;
+@property (nonatomic, retain) UIView *containerView;
 
 -(void)showGalleryPhotosInViewController:(UIViewController *)viewController;
 

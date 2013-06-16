@@ -45,6 +45,8 @@
 		F83F8B1A172F807F00F8F465 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83F8B19172F807F00F8F465 /* CoreLocation.framework */; };
 		F83F8B1E172F80BC00F8F465 /* CoreLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */; };
 		F83F8B23172FA02C00F8F465 /* LocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = F83F8B22172FA02C00F8F465 /* LocationVO.m */; };
+		F840F79F1769C68600CC49C9 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F840F79E1769C68600CC49C9 /* ProgressView.m */; };
+		F840F7A11769C69C00CC49C9 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F840F7A01769C69C00CC49C9 /* ProgressView.xib */; };
 		F842D7DF17671C2400CE3FB1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F842D7DE17671C2400CE3FB1 /* AssetsLibrary.framework */; };
 		F842D7E317672D3800CE3FB1 /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = F842D7E217672D3800CE3FB1 /* checkmark.png */; };
 		F8516383176880D90035569F /* PhotoGalleryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8516382176880D90035569F /* PhotoGalleryManager.m */; };
@@ -128,6 +130,9 @@
 		F83F8B1D172F80BC00F8F465 /* CoreLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationManager.m; sourceTree = "<group>"; };
 		F83F8B21172FA02C00F8F465 /* LocationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationVO.h; sourceTree = "<group>"; };
 		F83F8B22172FA02C00F8F465 /* LocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationVO.m; sourceTree = "<group>"; };
+		F840F79D1769C68600CC49C9 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		F840F79E1769C68600CC49C9 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		F840F7A01769C69C00CC49C9 /* ProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressView.xib; sourceTree = "<group>"; };
 		F842D7DE17671C2400CE3FB1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		F842D7E217672D3800CE3FB1 /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
 		F8516381176880D90035569F /* PhotoGalleryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGalleryManager.h; sourceTree = "<group>"; };
@@ -335,6 +340,7 @@
 		F83F8AFC172F806700F8F465 /* MyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F840F79C1769C66300CC49C9 /* ProgressView */,
 				F813555A1768758E00253A30 /* PhotoGallery */,
 				F813553E17686F4F00253A30 /* ELCImagePicker */,
 				F8C9F66E17608E8200CC5BC2 /* PhotoView */,
@@ -422,6 +428,16 @@
 				F83F8B11172F806700F8F465 /* CaptureDetailsController.xib */,
 			);
 			name = XIB;
+			sourceTree = "<group>";
+		};
+		F840F79C1769C66300CC49C9 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				F840F79D1769C68600CC49C9 /* ProgressView.h */,
+				F840F79E1769C68600CC49C9 /* ProgressView.m */,
+				F840F7A01769C69C00CC49C9 /* ProgressView.xib */,
+			);
+			name = ProgressView;
 			sourceTree = "<group>";
 		};
 		F874B41A175323E200B305FE /* UI Assets */ = {
@@ -572,6 +588,7 @@
 				F813555717686F4F00253A30 /* ELCAssetTablePicker.xib in Resources */,
 				F813555817686F4F00253A30 /* Overlay.png in Resources */,
 				F813555917686F4F00253A30 /* Overlay@2x.png in Resources */,
+				F840F7A11769C69C00CC49C9 /* ProgressView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +631,7 @@
 				F813555317686F4F00253A30 /* ELCAssetTablePicker.m in Sources */,
 				F813555417686F4F00253A30 /* ELCImagePickerController.m in Sources */,
 				F8516383176880D90035569F /* PhotoGalleryManager.m in Sources */,
+				F840F79F1769C68600CC49C9 /* ProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
