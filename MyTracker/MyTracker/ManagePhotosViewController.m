@@ -47,7 +47,7 @@
 #pragma mark Notifcation handler
 
 -(void)didStartCopyImagesFromGallery:(NSNotification *)notification {
-    AppLog(@"COPY STARTED");
+    AppLog(@"sTARTED");
 
 }
 
