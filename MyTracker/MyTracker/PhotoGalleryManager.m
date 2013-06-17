@@ -27,7 +27,8 @@
 #pragma mark ELCImagePickerController delegate
 
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info {
-    [self.delegate didFinishPickingImages:[info valueForKey:@"UIImagePickerControllerOriginalImage"]];
+    if([info count] > 0)
+        [self.delegate didFinishPickingImages:[info valueForKey:@"UIImagePickerControllerOriginalImage"]];
 }
 
 - (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {

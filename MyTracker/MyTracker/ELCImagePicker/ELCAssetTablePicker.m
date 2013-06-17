@@ -9,6 +9,7 @@
 #import "ELCAssetCell.h"
 #import "ELCAsset.h"
 #import "ELCAlbumPickerController.h"
+#import "AlertUtil.h"
 
 @interface ELCAssetTablePicker ()
 
@@ -29,7 +30,7 @@
 {
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	[self.tableView setAllowsSelection:NO];
-
+    
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
     self.elcAssets = tempArray;
     [tempArray release];
@@ -41,7 +42,7 @@
         [self.navigationItem setRightBarButtonItem:doneButtonItem];
         [self.navigationItem setTitle:@"Loading..."];
     }
-
+    
 	[self performSelectorInBackground:@selector(preparePhotos) withObject:nil];
 }
 
@@ -66,19 +67,19 @@
 - (void)preparePhotos
 {
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
+    
     //NSLog(@"enumerating photos");
     [self.assetGroup enumerateAssetsUsingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
         
         if(result == nil) {
             return;
         }
-
+        
         ELCAsset *elcAsset = [[ELCAsset alloc] initWithAsset:result];
         [elcAsset setParent:self];
         [self.elcAssets addObject:elcAsset];
         [elcAsset release];
-     }];
+    }];
     //NSLog(@"done enumerating photos");
     
     dispatch_sync(dispatch_get_main_queue(), ^{
@@ -98,29 +99,33 @@
     });
     
     [pool release];
-
+    
 }
 
 - (void)doneAction:(id)sender
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"COPY_IMAGES" object:nil];
-	NSMutableArray *selectedAssetsImages = [[[NSMutableArray alloc] init] autorelease];
-	    
-	for(ELCAsset *elcAsset in self.elcAssets) {
-
-		if([elcAsset selected]) {
-			
-			[selectedAssetsImages addObject:[elcAsset asset]];
-		}
-	}
+    NSMutableArray *selectedAssetsImages = [[[NSMutableArray alloc] init] autorelease];
+    
+    for(ELCAsset *elcAsset in self.elcAssets) {
         
+        if([elcAsset selected]) {
+            
+            [selectedAssetsImages addObject:[elcAsset asset]];
+        }
+    }
+    
     [self.parent selectedAssets:selectedAssetsImages];
+    
+    if([selectedAssetsImages count] > 0)
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"COPY_IMAGES" object:nil];
+    else
+        [AlertUtil showAlertWithMessage:@"Please select photos"];
 }
 
 - (void)assetSelected:(id)asset
 {
     if (self.singleSelection) {
-
+        
         for(ELCAsset *elcAsset in self.elcAssets) {
             if(asset != elcAsset) {
                 elcAsset.selected = NO;
@@ -156,15 +161,15 @@
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
     static NSString *CellIdentifier = @"Cell";
-        
+    
     ELCAssetCell *cell = (ELCAssetCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-
-    if (cell == nil) {		        
+    
+    if (cell == nil) {
         cell = [[[ELCAssetCell alloc] initWithAssets:[self assetsForIndexPath:indexPath] reuseIdentifier:CellIdentifier] autorelease];
-
-    } else {		
+        
+    } else {
 		[cell setAssets:[self assetsForIndexPath:indexPath]];
 	}
     
@@ -181,20 +186,20 @@
     int count = 0;
     
     for(ELCAsset *asset in self.elcAssets) {
-		if([asset selected]) {   
-            count++;	
+		if([asset selected]) {
+            count++;
 		}
 	}
     
     return count;
 }
 
-- (void)dealloc 
+- (void)dealloc
 {
-    [_assetGroup release];    
+    [_assetGroup release];
     [_elcAssets release];
     [_selectedAssetsLabel release];
-    [super dealloc];    
+    [super dealloc];
 }
 
 @end

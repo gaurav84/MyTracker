@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoView : UIImageView
+@interface PhotoView : UIImageView {
+    UIImageView *checkmarkView;
+}
 
 @property (nonatomic, retain) NSData *imageData;
+@property (nonatomic) BOOL isSelected;
 
 -(void)showImageWithData:(NSData *)data;
 

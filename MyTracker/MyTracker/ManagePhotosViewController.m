@@ -9,6 +9,7 @@
 #import "ManagePhotosViewController.h"
 #import "ImageVO.h"
 #import "AlertUtil.h"
+#import "PhotoView.h"
 
 @interface ManagePhotosViewController ()
 
@@ -20,7 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.photosToBeSaved = [[NSMutableArray alloc] init];
     
+    [self setRightBarButtonItem];
     [self setUpGestures];
     [self setUpNotifications];
 }
@@ -47,10 +51,9 @@
 #pragma mark Notifcation handler
 
 -(void)didStartCopyImagesFromGallery:(NSNotification *)notification {
-    AppLog(@"START");
     
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    progressView = [[ProgressView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, self.view.frame.size.height/4, 0, 0)];
+    progressView = [[ProgressView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, self.view.frame.size.height/4, progressView.frame.size.width, progressView.frame.size.height)];
     
     [window addSubview:progressView];
 
@@ -114,37 +117,59 @@
 
 -(void)didFinishPickingImages:(NSArray *)selectedPhotos {
     NSArray *params = [NSArray arrayWithObjects:[NSNumber numberWithInt:selectedPhotoIndex], selectedPhotos, nil];
-    [self func:params];
+    [self showSelectedPhotos:params];
 
 }
-
--(void)func:(NSArray *)params {
-    NSArray *selectedPhotos = [params objectAtIndex:1];
-    int sPhotoIndex = [[params objectAtIndex:0] intValue];
-    UIImage *image = [selectedPhotos objectAtIndex:sPhotoIndex];
-    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
-    [self.allPhotosDisplayView showImage:imageData];
-    selectedPhotoIndex ++;
-    progressView.progressLabel.text = [NSString stringWithFormat:@"Copying %d / %d", sPhotoIndex + 1, [selectedPhotos count]];
-    
-    if(sPhotoIndex == ([selectedPhotos count] - 1)) {
-        [self dismissModalViewControllerAnimated:YES];
-        [progressView removeFromSuperview];
-    }
-    else {
-        
-        NSArray *params = [NSArray arrayWithObjects:[NSNumber numberWithInt:selectedPhotoIndex], selectedPhotos, nil];
-        [self performSelector:@selector(func:) withObject:params afterDelay:0.01];
-    }
-
-}
-
-
 
 -(void)didCancel {
     [self dismissModalViewControllerAnimated:YES];
 }
 
-#pragma mark
+#pragma mark Showing picked photos from ELCImagePickerController
+
+-(void)showSelectedPhotos:(NSArray *)params {
+    int photoIndex = [[params objectAtIndex:0] intValue];
+    NSArray *selectedPhotos = [params objectAtIndex:1];
+    
+    UIImage *image = [selectedPhotos objectAtIndex:photoIndex];
+    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
+    [self.allPhotosDisplayView showImage:imageData];
+    selectedPhotoIndex ++;
+    
+    progressView.progressLabel.text = [NSString stringWithFormat:@"Copying %d / %d", photoIndex + 1, [selectedPhotos count]];
+    
+    if(photoIndex == ([selectedPhotos count] - 1)) {
+        for (UIView *view in [[[UIApplication sharedApplication] keyWindow] subviews]) {
+            if([view isMemberOfClass:[ProgressView class]]) {
+                [view removeFromSuperview];
+            }
+        }
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    else {
+        NSArray *params = [NSArray arrayWithObjects:[NSNumber numberWithInt:selectedPhotoIndex], selectedPhotos, nil];
+        [self performSelector:@selector(showSelectedPhotos:) withObject:params afterDelay:0.01];
+    }
+    
+}
+
+#pragma mark Right bar button item
+
+-(void)setRightBarButtonItem {
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAddingPhotos:)]];
+}
+
+-(void)doneAddingPhotos:(id)sender {
+    [self.photosToBeSaved removeAllObjects];
+    for(UIView *view in [self.allPhotosDisplayView subviews]) {
+        if([view isMemberOfClass:[PhotoView class]]) {
+            if([(PhotoView *)view isSelected]) {
+                [self.photosToBeSaved addObject:view];
+            }
+        }
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

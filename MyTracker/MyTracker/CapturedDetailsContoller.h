@@ -11,6 +11,7 @@
 #import "MemberView.h"
 #import "AddMemberView.h"
 #import "AutoSuggest.h"
+#import "ManagePhotosViewController.h"
 
 @interface CapturedDetailsContoller : UIViewController <UITextFieldDelegate,
                                                         UINavigationControllerDelegate,
@@ -18,6 +19,9 @@
                                                         AutoSuggestDelegate,
                                                         MemberViewDelegate,
                                                         AddMemberViewDelegate>
+{
+    ManagePhotosViewController *managePhotosViewController;
+}
 
 @property (nonatomic, retain) CapturedDetailsVO *capturedDetailsVO;
 @property (nonatomic, retain) NSMutableArray *listOfAllPlaceLabels;
@@ -31,5 +35,6 @@
 @property (nonatomic, retain) IBOutlet UITextField *placeLabelField;
 @property (nonatomic, retain) IBOutlet MemberView *memberView;
 @property (nonatomic, retain) IBOutlet AutoSuggest *autoSuggestTableView;
+@property (nonatomic, retain) IBOutlet UILabel *numberOfPhotosToBeAdded;
 
 @end

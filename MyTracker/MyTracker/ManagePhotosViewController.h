@@ -14,12 +14,12 @@
 
 @interface ManagePhotosViewController : UIViewController <UINavigationControllerDelegate,
                                                             UIImagePickerControllerDelegate,
-                                                            PhotoGalleryManagerDelegate> {
+                                                            PhotoGalleryManagerDelegate>
+{
                                                                 
-                                                                PhotoGalleryManager *photoGalleryManager;
-                                                                int selectedPhotoIndex;
-                                                                ProgressView *progressView;
-
+    PhotoGalleryManager *photoGalleryManager;
+    int selectedPhotoIndex;
+    ProgressView *progressView;
     
     // IBOutlet
     IBOutlet UIScrollView *photosScroller;
@@ -28,6 +28,7 @@
 }
 
 @property (nonatomic, retain) CapturedDetailsVO *capturedDetailsVO;
+@property (nonatomic, retain) NSMutableArray *photosToBeSaved;
 
 // IBOutlet
 @property (nonatomic, retain) IBOutlet AllPhotosDisplayView *allPhotosDisplayView;

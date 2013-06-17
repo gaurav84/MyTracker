@@ -60,6 +60,8 @@
     CoreDataUtil *coreDataUtil = [[CoreDataUtil alloc] init];
     [self.listOfAllPlaceLabels removeAllObjects];
     self.listOfAllPlaceLabels = [coreDataUtil listOfPlaceLabels];
+    
+    self.numberOfPhotosToBeAdded.text = [NSString stringWithFormat:@"%d Photos", [managePhotosViewController.photosToBeSaved count]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -209,7 +211,7 @@
 #pragma mark IBAction
 
 -(IBAction)addPhotos:(id)sender {
-    ManagePhotosViewController *managePhotosViewController = [[ManagePhotosViewController alloc] init];
+    managePhotosViewController = [[ManagePhotosViewController alloc] init];
     managePhotosViewController.capturedDetailsVO = self.capturedDetailsVO;
     [self.navigationController pushViewController:managePhotosViewController animated:YES];
 }

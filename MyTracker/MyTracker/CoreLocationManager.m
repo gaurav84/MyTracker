@@ -33,7 +33,7 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     [self.locationManager stopUpdatingLocation];
 
-    AppLog(@"%@", [NSString stringWithFormat:@"Latitude: %f, Longitude: %f", [[locations lastObject] coordinate].latitude, [[locations lastObject] coordinate].longitude]);
+    //AppLog(@"%@", [NSString stringWithFormat:@"Latitude: %f, Longitude: %f", [[locations lastObject] coordinate].latitude, [[locations lastObject] coordinate].longitude]);
     
     LocationVO *locationVO = [[LocationVO alloc] init];
     locationVO.latitude = [[locations lastObject] coordinate].latitude;
