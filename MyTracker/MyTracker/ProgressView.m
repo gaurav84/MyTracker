@@ -2,7 +2,7 @@
 //  ProgressView.m
 //  MyTracker
 //
-//  Created by Gaurav Srivastava on 13/06/13.
+//  Created by Gaurav Srivastava on 17/06/13.
 //  Copyright (c) 2013 Gaurav Srivastava. All rights reserved.
 //
 
@@ -23,13 +23,5 @@
     UIView *view = [[[NSBundle mainBundle] loadNibNamed:@"ProgressView" owner:self options:nil] objectAtIndex:0];
     [self addSubview:view];
 }
-
--(void)updateLabelWithProgress:(NSString *)progress {
-    NSLog(@"PROGRESS: %@", progress);
-
-    self.progressLabel.text = progress;
-    
-}
-
 
 @end

@@ -10,11 +10,16 @@
 #import "CapturedDetailsVO.h"
 #import "AllPhotosDisplayView.h"
 #import "PhotoGalleryManager.h"
+#import "ProgressView.h"
 
 @interface ManagePhotosViewController : UIViewController <UINavigationControllerDelegate,
                                                             UIImagePickerControllerDelegate,
                                                             PhotoGalleryManagerDelegate> {
-    PhotoGalleryManager *photoGalleryManager;
+                                                                
+                                                                PhotoGalleryManager *photoGalleryManager;
+                                                                int selectedPhotoIndex;
+                                                                ProgressView *progressView;
+
     
     // IBOutlet
     IBOutlet UIScrollView *photosScroller;

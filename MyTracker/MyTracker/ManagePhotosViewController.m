@@ -20,8 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setUpGestures];
     [self setUpNotifications];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    selectedPhotoIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +48,12 @@
 
 -(void)didStartCopyImagesFromGallery:(NSNotification *)notification {
     AppLog(@"START");
+    
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    progressView = [[ProgressView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/4, self.view.frame.size.height/4, 0, 0)];
+    
+    [window addSubview:progressView];
+
 }
 
 #pragma mark Gestures setup
@@ -102,17 +113,33 @@
 #pragma mark PhotoGalleryManger delegate
 
 -(void)didFinishPickingImages:(NSArray *)selectedPhotos {
-    int index = 0;
-    for(int i=0; i<[selectedPhotos count]; i++) {
-        UIImage *image = [selectedPhotos objectAtIndex:i];
-        NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
-        [self.allPhotosDisplayView showImage:imageData];
-        index ++;
-        AppLog(@"%d / %d DONE", index, [selectedPhotos count]);
-    }
-    [self dismissModalViewControllerAnimated:YES];
-    AppLog(@"FINSIH");
+    NSArray *params = [NSArray arrayWithObjects:[NSNumber numberWithInt:selectedPhotoIndex], selectedPhotos, nil];
+    [self func:params];
+
 }
+
+-(void)func:(NSArray *)params {
+    NSArray *selectedPhotos = [params objectAtIndex:1];
+    int sPhotoIndex = [[params objectAtIndex:0] intValue];
+    UIImage *image = [selectedPhotos objectAtIndex:sPhotoIndex];
+    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
+    [self.allPhotosDisplayView showImage:imageData];
+    selectedPhotoIndex ++;
+    progressView.progressLabel.text = [NSString stringWithFormat:@"Copying %d / %d", sPhotoIndex + 1, [selectedPhotos count]];
+    
+    if(sPhotoIndex == ([selectedPhotos count] - 1)) {
+        [self dismissModalViewControllerAnimated:YES];
+        [progressView removeFromSuperview];
+    }
+    else {
+        
+        NSArray *params = [NSArray arrayWithObjects:[NSNumber numberWithInt:selectedPhotoIndex], selectedPhotos, nil];
+        [self performSelector:@selector(func:) withObject:params afterDelay:0.01];
+    }
+
+}
+
+
 
 -(void)didCancel {
     [self dismissModalViewControllerAnimated:YES];
