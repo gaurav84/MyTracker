@@ -20,7 +20,7 @@
     
     [albumController setParent:elcPicker];
     [elcPicker setDelegate:self];
-    self.containerView = elcPicker.elcContainerView;
+    
     [viewController presentModalViewController:elcPicker animated:YES];
 }
 
